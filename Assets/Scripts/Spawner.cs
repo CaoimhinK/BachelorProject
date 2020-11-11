@@ -33,16 +33,32 @@ public class Spawner : MonoBehaviour
     public GameObject SpawnObject()
     {
         GameObject go = Instantiate(spawnGoPrefab, transform.position, transform.rotation);
-        var tex = go.GetComponent<TextTexture>();
+        
         var mat = go.GetComponent<MeshRenderer>().material;
+        
         var mo = go.GetComponent<MathObj>();
+        mo.type = type;
+        mat.color = ColorPalette.Colors[type];
+        
+        var tex = go.GetComponent<TextTexture>();
         tex.texGo = _textTex.texGo;
         tex.fontSize = _textTex.fontSize;
+        
         switch (type)
         {
             case (TypeEnum.Number):
-                mo.value = spawnValue;
-                tex.text = spawnValue.ToString();
+                if (_func)
+                {
+                    mo.value = (int) _func.value;
+                    tex.fontSize = 200;
+                    tex.text = mo.value.ToString();
+                }
+                else
+                {
+                    mo.value = spawnValue;
+                    tex.fontSize = 200;
+                    tex.text = spawnValue.ToString();
+                }
                 break;
             case (TypeEnum.Vector):
                 if (_cont)
@@ -65,8 +81,6 @@ public class Spawner : MonoBehaviour
                 tex.text = strHead + strBody;
                 break;
         }
-        mat.color = ColorPalette.Colors[type];
-        go.GetComponent<MathObj>().type = type;
         return go;
     }
 }
