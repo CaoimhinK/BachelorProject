@@ -12,19 +12,21 @@ public class Spawner : MonoBehaviour
 
     private TextTexture _textTex;
     private VectorContainer _cont;
+    private Function _func;
 
     private void Start()
     {
+        _cont = GetComponent<VectorContainer>();
+        _func = GetComponent<Function>();
         GetComponent<MeshRenderer>().material.color = ColorPalette.Colors[type];
         _textTex = GetComponent<TextTexture>();
-        _cont = GetComponent<VectorContainer>();
         spawnGoPrefab.GetComponent<TextTexture>().text = _textTex.text;
         _textTex.Render();
     }
 
-    public void ChangeText()
+    public void ChangeText(string str)
     {
-        _textTex.text = "Vec\n(" + (int) _cont.vec.x + "," + (int) _cont.vec.y + "," + (int) _cont.vec.z + ")";
+        _textTex.text = str;
         _textTex.Render();
     }
 
@@ -35,15 +37,32 @@ public class Spawner : MonoBehaviour
         var mat = go.GetComponent<MeshRenderer>().material;
         var mo = go.GetComponent<MathObj>();
         tex.texGo = _textTex.texGo;
-        tex.text = _textTex.text;
         tex.fontSize = _textTex.fontSize;
         switch (type)
         {
             case (TypeEnum.Number):
                 mo.value = spawnValue;
+                tex.text = spawnValue.ToString();
                 break;
             case (TypeEnum.Vector):
-                mo.vecValue = (_cont) ? _cont.vec : spawnVecValue;
+                if (_cont)
+                {
+                    mo.vecValue = _cont.vec;
+                }
+                else if (_func)
+                {
+                    mo.vecValue = _func.vec;
+                }
+                else
+                {
+                    mo.vecValue = spawnVecValue;
+                }
+
+                var strHead = "Vec\n";
+                var strBody = "(" + (int) mo.vecValue.x + "," + (int) mo.vecValue.y + "," + (int) mo.vecValue.z + ")";
+                var size = (7f / strBody.Length) * 80f;
+                tex.fontSize = Mathf.RoundToInt(size);
+                tex.text = strHead + strBody;
                 break;
         }
         mat.color = ColorPalette.Colors[type];

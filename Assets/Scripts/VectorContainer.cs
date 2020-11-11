@@ -15,13 +15,11 @@ public class VectorContainer : MonoBehaviour
     public void Update()
     {
         _last = vec;
-        var x = vecs[0];
-        var y = vecs[1];
-        var z = vecs[2];
-        vec = new Vector3(x.GetValue(), y.GetValue(), z.GetValue());
+        vec = new Vector3(vecs[0].GetValue(),vecs[1].GetValue(), vecs[2].GetValue());
         if (!vec.Equals(_last))
         {
-            GetComponent<Spawner>().ChangeText();
+            var str = "Vec\n(" + (int) vec.x + "," + (int) vec.y + "," + (int) vec.z + ")";
+            GetComponent<Spawner>().ChangeText(str);
         }
     }
 }

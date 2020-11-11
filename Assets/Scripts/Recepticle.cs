@@ -22,9 +22,15 @@ public class Recepticle : MonoBehaviour
         _fullMat.color = new Color(0.6f,1,0.6f);
     }
 
-    public float GetValue()
+    public int GetValue()
     {
         var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.value : 0;
+        return val;
+    }
+
+    public Vector3 GetVector()
+    {
+        var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.vecValue : Vector3.zero;
         return val;
     }
 

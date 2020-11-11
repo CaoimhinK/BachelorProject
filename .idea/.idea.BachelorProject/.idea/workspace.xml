@@ -29,10 +29,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/TypeEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TextTextureEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MathObj.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTextureEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -55,8 +53,6 @@
         <option value="$PROJECT_DIR$/Assets/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/TextTextureEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/MathObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NewGrabScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeEnum.cs" />
@@ -64,6 +60,12 @@
         <option value="$PROJECT_DIR$/Assets/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NewGrabScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Function.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       </list>
     </option>
   </component>
@@ -116,7 +118,7 @@
       <workItem from="1604421553481" duration="9099000" />
       <workItem from="1604920668656" duration="23827000" />
       <workItem from="1604999151273" duration="16728000" />
-      <workItem from="1605084156073" duration="14340000" />
+      <workItem from="1605084156073" duration="18220000" />
     </task>
     <servers />
   </component>
