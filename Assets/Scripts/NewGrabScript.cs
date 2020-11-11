@@ -43,6 +43,7 @@ public class NewGrabScript : MonoBehaviour
                 var hitGo = hitInfo.collider.gameObject;
                 if (hitGo.TryGetComponent<Spawner>(out var spawner))
                 {
+                    if (currentGo) Destroy(currentGo);
                     StartCoroutine(nameof(Spawn), spawner);
                 }
                 else
@@ -51,7 +52,14 @@ public class NewGrabScript : MonoBehaviour
                     {
                         if (currentGo)
                         {
-                            StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
+                            if (currentGo.GetComponent<MathObj>().type == rec.type)
+                            {
+                                StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
+                            }
+                            else
+                            {
+                                StartCoroutine(nameof(Warn), hitGo);
+                            }
                         }
                         else if (rec.HasObject())
                         {
@@ -60,6 +68,11 @@ public class NewGrabScript : MonoBehaviour
                     }
                 }
             }
+        }
+        else if (Input.GetButtonDown("Throw"))
+        {
+            if (currentGo) Destroy(currentGo);
+            currentGo = null;
         }
     }
 
@@ -83,52 +96,55 @@ public class NewGrabScript : MonoBehaviour
 
     IEnumerator TakeRec(Recepticle rec)
     {
-        _animating = true;
-        _startTime = Time.time;
-        if (currentGo)
-        {
-            Destroy(currentGo);
-            currentGo = null;
-        }
         currentGo = rec.TakeObject();
-        _startPos = currentGo.transform.position;
-        _endPos = grabPos.transform.position;
+        StartAnim(currentGo.transform.position, grabPos.transform.position);
         yield return new WaitForSeconds(GrabDuration);
         currentGo.transform.SetParent(grabPos);
         currentGo.transform.localPosition = Vector3.zero;
-        _animating = false;
+        StopAnim();
     }
 
     IEnumerator GiveRec(Holder hold)
     {
-        _animating = true;
         var hitPoint = hold.HitGo.transform.position;
-        _startTime = Time.time;
+        StartAnim(currentGo.transform.position, hitPoint + Vector3.up * 0.05f);
         currentGo.transform.SetParent(null);
-        _startPos = currentGo.transform.position;
-        _endPos = hitPoint + Vector3.up * 0.05f;
         yield return new WaitForSeconds(GrabDuration);
         hold.Rec.GiveObject(currentGo);
+        currentGo.transform.SetParent(hold.HitGo.transform);
         currentGo = null;
-        _animating = false;
+        StopAnim();
     }
 
     IEnumerator Spawn(Spawner spawner)
     {
-        _animating = true;
-        _startTime = Time.time;
-        if (currentGo)
-        {
-            Destroy(currentGo);
-            currentGo = null;
-        }
         currentGo = spawner.SpawnObject();
-        currentGo.GetComponent<BoxCollider>().enabled = false;
-        _startPos = currentGo.transform.localPosition;
-        _endPos = grabPos.transform.position;
+        StartAnim(currentGo.transform.localPosition, grabPos.transform.position);
         yield return new WaitForSeconds(GrabDuration);
         currentGo.transform.SetParent(grabPos);
         currentGo.transform.localPosition = Vector3.zero;
+        StopAnim();
+    }
+
+    IEnumerator Warn(GameObject hitGo)
+    {
+        var mat = hitGo.GetComponent<MeshRenderer>().material;
+        var col = mat.color;
+        mat.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        mat.color = col;
+    }
+
+    void StartAnim(Vector3 startPos, Vector3 endPos)
+    {
+        _animating = true;
+        _startTime = Time.time;
+        _startPos = startPos;
+        _endPos = endPos;
+    }
+
+    void StopAnim()
+    {
         _animating = false;
     }
 }

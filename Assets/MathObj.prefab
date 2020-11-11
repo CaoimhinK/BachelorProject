@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5723300064140975542}
   - component: {fileID: 7781614552604737881}
   - component: {fileID: 6176438105796612310}
-  - component: {fileID: 3170754853888400045}
   - component: {fileID: -2280080342115018555}
   - component: {fileID: -951287567366113865}
   m_Layer: 0
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3170754853888400045
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8141143765973767222}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-2280080342115018555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d046d15935a1014d0ac87caa875efeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tex: {fileID: 0}
+  tex: {fileID: 6879886281561966416, guid: 183699f7ff2852cd4872b733af8cc9be, type: 3}
   text: 8
   fontSize: 200
 --- !u!114 &-951287567366113865
@@ -121,7 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8141143765973767222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20348dcc4e089b01978d65e38246213, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e9ade3228f26aebd97adcdd67557982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   value: 0
+  vecValue: {x: 0, y: 0, z: 0}

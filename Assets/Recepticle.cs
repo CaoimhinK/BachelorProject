@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Recepticle : MonoBehaviour
 {
+    public TypeEnum type;
+    
     private GameObject _heldGo;
     private MeshRenderer _ren;
     private Material _defaultMat;
@@ -13,9 +15,11 @@ public class Recepticle : MonoBehaviour
     public void Start()
     {
         _ren = GetComponent<MeshRenderer>();
-        _defaultMat = _ren.material;
+        _defaultMat = new Material(_ren.material);
+        _defaultMat.color = ColorPalette.Colors[type];
+        _ren.material = _defaultMat;
         _fullMat = Instantiate(_defaultMat);
-        _fullMat.color = Color.cyan;
+        _fullMat.color = new Color(0.6f,1,0.6f);
     }
 
     public float GetValue()
