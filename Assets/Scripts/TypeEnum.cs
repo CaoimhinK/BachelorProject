@@ -12,6 +12,7 @@ public enum TypeEnum
     Dot,
     Cross,
     Invert,
+    Normalise,
 }
 
 public class FuncIO
@@ -61,37 +62,36 @@ static class TypeFunctions
            case TypeEnum.Vector:
                strHead = StrHead("Vec");
                strBody = StrBody(vec);
-               fsBool = true;
                break;
            case TypeEnum.Add:
                vec = vec1.GetVector() + vec2.GetVector();
                strHead = StrHead("+");
                strBody = StrBody(vec);
-               fsBool = true;
                break;
            case TypeEnum.Sub:
                vec = vec1.GetVector() - vec2.GetVector();
                strHead = StrHead("-");
                strBody = StrBody(vec);
-               fsBool = true;
                break;
            case TypeEnum.Dot:
                value = Vector3.Dot(vec1.GetVector(), vec2.GetVector());
                strHead = StrHead(".");
                strBody = StrBody((int) value);
-               fsBool = true;
                break;
            case TypeEnum.Cross:
                vec = Vector3.Cross(vec1.GetVector(), vec2.GetVector());
                strHead = StrHead("x");
                strBody = StrBody(vec);
-               fsBool = true;
                break;
            case TypeEnum.Invert:
                vec = -vec1.GetVector();
                strHead = StrHead("Inv");
                strBody = StrBody(vec);
-               fsBool = true;
+               break;
+           case TypeEnum.Normalise:
+               vec = vec1.GetVector().normalized;
+               strHead = StrHead("Norm");
+               strBody = StrBodyF(vec);
                break;
        }
 
@@ -115,6 +115,11 @@ static class TypeFunctions
    private static string StrBody(Vector3 v)
    { 
        return "(" + (int) v.x + "," + (int) v.y + "," + (int) v.z + ")";
+   }
+
+   private static string StrBodyF(Vector3 v)
+   {
+       return "(" + (int)(v.x * 100)/100f + "," + (int)(v.y * 100)/100f + "," + (int)(v.z * 100)/100f + ")";
    }
    
     private static string StrBody(int n)

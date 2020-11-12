@@ -80,6 +80,11 @@ public class Spawner : MonoBehaviour
 
                 var strHead = "Vec\n";
                 var strBody = "(" + (int) mo.vecValue.x + "," + (int) mo.vecValue.y + "," + (int) mo.vecValue.z + ")";
+                if (_func && _func.type == TypeEnum.Normalise)
+                {
+                    var v = mo.vecValue;
+                    strBody = "(" + (int)(v.x * 100)/100f + "," + (int)(v.y * 100)/100f + "," + (int)(v.z * 100)/100f + ")";
+                }
                 var size = (7f / strBody.Length) * 80f;
                 tex.fontSize = Mathf.RoundToInt(size);
                 tex.text = strHead + strBody;
