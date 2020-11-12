@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -24,9 +25,10 @@ public class Spawner : MonoBehaviour
         _textTex.Render();
     }
 
-    public void ChangeText(string str)
+    public void ChangeText(string strHead, string strBody, int fontSize)
     {
-        _textTex.text = str;
+        _textTex.fontSize = fontSize;
+        _textTex.text = strHead + strBody;
         _textTex.Render();
     }
 
@@ -50,14 +52,16 @@ public class Spawner : MonoBehaviour
                 if (_func)
                 {
                     mo.value = (int) _func.value;
-                    tex.fontSize = 200;
-                    tex.text = mo.value.ToString();
+                    var text = mo.value.ToString();
+                    tex.fontSize = Mathf.RoundToInt(Mathf.Min(2f / text.Length * 200f, 200f));
+                    tex.text = text;
                 }
                 else
                 {
                     mo.value = spawnValue;
-                    tex.fontSize = 200;
-                    tex.text = spawnValue.ToString();
+                    var text = spawnValue.ToString();
+                    tex.fontSize = Mathf.RoundToInt(Mathf.Min(2f / text.Length * 200f, 200f));
+                    tex.text = text;
                 }
                 break;
             case (TypeEnum.Vector):

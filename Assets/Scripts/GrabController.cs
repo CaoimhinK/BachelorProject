@@ -108,7 +108,6 @@ public class GrabController : MonoBehaviour
     {
         var hitPoint = hold.HitGo.transform.position;
         StartAnim(currentGo.transform.position, hitPoint + Vector3.up * 0.05f);
-        currentGo.transform.SetParent(null);
         yield return new WaitForSeconds(GrabDuration);
         hold.Rec.GiveObject(currentGo);
         currentGo.transform.SetParent(hold.HitGo.transform);
@@ -120,8 +119,8 @@ public class GrabController : MonoBehaviour
     {
         currentGo = spawner.SpawnObject();
         StartAnim(currentGo.transform.localPosition, grabPos.transform.position);
-        yield return new WaitForSeconds(GrabDuration);
         currentGo.transform.SetParent(grabPos);
+        yield return new WaitForSeconds(GrabDuration);
         currentGo.transform.localPosition = Vector3.zero;
         StopAnim();
     }

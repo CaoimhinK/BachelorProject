@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
-using UnityEngine;
+﻿using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class Function : MonoBehaviour
 {
@@ -19,53 +17,17 @@ public class Function : MonoBehaviour
     {
         _last = vec;
         _lastValue = value;
-        var strHead = "Vec";
-        var strBody = "";
-        switch (type)
-        {
-            case TypeEnum.Add:
-                vec = vec1.GetVector() + vec2.GetVector();
-                strHead = StrHead("+");
-                strBody = StrBody(vec);
-                break;
-            case TypeEnum.Sub:
-                vec = vec1.GetVector() - vec2.GetVector();
-                strHead = StrHead("-");
-                strBody = StrBody(vec);
-                break;
-            case TypeEnum.Dot:
-                value = Vector3.Dot(vec1.GetVector(), vec2.GetVector());
-                strHead = StrHead(".");
-                strBody = StrBody((int) value);
-                break;
-            case TypeEnum.Cross:
-                vec = Vector3.Cross(vec1.GetVector(), vec2.GetVector());
-                strHead = StrHead("x");
-                strBody = StrBody(vec);
-                break;
-        }
+        
+        var io = TypeFunctions.EvaluateFunction(type, vec1, vec2);
+        io.Out(out vec, out value, out var strHead, out var strBody, out var fontSize);
+        
         if (!vec.Equals(_last))
         {
-            GetComponent<Spawner>().ChangeText(strHead + strBody);
+            GetComponent<Spawner>().ChangeText(strHead, strBody, fontSize);
         }
         if (!value.Equals(_lastValue))
         {
-            GetComponent<Spawner>().ChangeText(strHead + strBody);
+            GetComponent<Spawner>().ChangeText(strHead, strBody, fontSize);
         }
-    }
-
-    private string StrHead(string str)
-    {
-        return "<b>" + str + "</b>\n";
-    }
-
-    private string StrBody(Vector3 v)
-    { 
-        return "(" + (int) v.x + "," + (int) v.y + "," + (int) v.z + ")";
-    }
-
-    private string StrBody(int n)
-    {
-        return n.ToString();
     }
 }

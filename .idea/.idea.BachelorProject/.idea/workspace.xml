@@ -19,14 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="" />
+    <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../notes.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,12 +70,12 @@
         <option value="$PROJECT_DIR$/Assets/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewGrabScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Function.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
       </list>
     </option>
   </component>
@@ -119,7 +128,9 @@
       <workItem from="1604421553481" duration="9099000" />
       <workItem from="1604920668656" duration="23827000" />
       <workItem from="1604999151273" duration="16728000" />
-      <workItem from="1605084156073" duration="21879000" />
+      <workItem from="1605084156073" duration="22388000" />
+      <workItem from="1605177534044" duration="5832000" />
+      <workItem from="1605183409319" duration="36000" />
     </task>
     <servers />
   </component>
