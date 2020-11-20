@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public TypeEnum type;
+    public ObjType type;
     public GameObject spawnGoPrefab;
-    public int spawnValue;
+    public float spawnValue;
     public Vector3 spawnVecValue;
 
     private TextTexture _textTex;
@@ -25,11 +25,22 @@ public class Spawner : MonoBehaviour
         _textTex.Render();
     }
 
+    public void LoadTex()
+    {
+        if (!_textTex)
+        {
+            _textTex = GetComponent<TextTexture>();
+            spawnGoPrefab.GetComponent<TextTexture>().text = _textTex.text;
+            _textTex.Render();
+        }
+    }
+
     public void ChangeText(string strHead, string strBody, int fontSize)
     {
         _textTex.fontSize = fontSize;
         _textTex.text = strHead + strBody;
         _textTex.Render();
+        
     }
 
     public GameObject SpawnObject()
@@ -43,28 +54,25 @@ public class Spawner : MonoBehaviour
         mat.color = ColorPalette.Colors[type];
         
         var tex = go.GetComponent<TextTexture>();
-        tex.texGo = _textTex.texGo;
-        tex.fontSize = _textTex.fontSize;
         
         switch (type)
         {
-            case (TypeEnum.Number):
+            case (ObjType.Number):
+                string text;
                 if (_func)
                 {
-                    mo.value = (int) _func.value;
-                    var text = mo.value.ToString();
-                    tex.fontSize = Mathf.RoundToInt(Mathf.Min(2f / text.Length * 200f, 200f));
-                    tex.text = text;
+                    mo.value = _func.value;
+                    text = ((int)(_func.value * 100)/100f).ToString();
                 }
                 else
                 {
                     mo.value = spawnValue;
-                    var text = spawnValue.ToString();
-                    tex.fontSize = Mathf.RoundToInt(Mathf.Min(2f / text.Length * 200f, 200f));
-                    tex.text = text;
+                    text = ((int)(spawnValue * 100)/100f).ToString();
                 }
+                tex.fontSize = Mathf.RoundToInt(Mathf.Min(2f / text.Length * 200f, 200f));
+                tex.text = text;
                 break;
-            case (TypeEnum.Vector):
+            case (ObjType.Vector):
                 if (_cont)
                 {
                     mo.vecValue = _cont.vec;
@@ -80,11 +88,6 @@ public class Spawner : MonoBehaviour
 
                 var strHead = "Vec\n";
                 var strBody = "(" + (int) mo.vecValue.x + "," + (int) mo.vecValue.y + "," + (int) mo.vecValue.z + ")";
-                if (_func && _func.type == TypeEnum.Normalise)
-                {
-                    var v = mo.vecValue;
-                    strBody = "(" + (int)(v.x * 100)/100f + "," + (int)(v.y * 100)/100f + "," + (int)(v.z * 100)/100f + ")";
-                }
                 var size = (7f / strBody.Length) * 80f;
                 tex.fontSize = Mathf.RoundToInt(size);
                 tex.text = strHead + strBody;

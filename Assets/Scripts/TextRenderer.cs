@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.UI;
@@ -9,7 +8,14 @@ public class TextRenderer : MonoBehaviour
     public Camera cam;
     public RenderTexture renTex;
     public Text renderText;
-    
+
+    public static TextRenderer Instance;
+
+    public void Start()
+    {
+        Instance = this;
+    }
+
     public Texture2D RenderText(string text, int fontSize)
     {
         renderText.text = text;

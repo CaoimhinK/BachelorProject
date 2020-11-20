@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d046d15935a1014d0ac87caa875efeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tex: {fileID: 6879886281561966416, guid: 183699f7ff2852cd4872b733af8cc9be, type: 3}
+  texGo: {fileID: 0}
   text: test
   fontSize: 200
 --- !u!114 &-6739000516425914266

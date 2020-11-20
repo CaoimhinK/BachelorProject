@@ -20,11 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MathObj.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MathObj.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Recepticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recepticle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Spawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../notes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +72,21 @@
         <option value="$PROJECT_DIR$/Assets/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/TextTextureEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/MathObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ColorPallette.cs" />
         <option value="$PROJECT_DIR$/Assets/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Spawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewGrabScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Function.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
       </list>
     </option>
   </component>
@@ -129,6 +143,12 @@
       <workItem from="1605177534044" duration="5832000" />
       <workItem from="1605183409319" duration="36000" />
       <workItem from="1605203875379" duration="979000" />
+      <workItem from="1605788893144" duration="2276000" />
+      <workItem from="1605791329895" duration="1946000" />
+      <workItem from="1605878280412" duration="5470000" />
+      <workItem from="1605883864075" duration="4378000" />
+      <workItem from="1605889846419" duration="2133000" />
+      <workItem from="1605893556962" duration="282000" />
     </task>
     <servers />
   </component>
@@ -161,6 +181,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1604420674564" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605881642428">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1605881642428" />
     <state x="1920" y="0" width="1281" height="1009" key="dock-window-1" timestamp="1604934118608">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

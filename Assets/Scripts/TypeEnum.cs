@@ -1,18 +1,22 @@
-﻿using System.Numerics;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-public enum TypeEnum 
+public enum FuncType 
 {
-    Number,
-    Vector,
+    Sin,
+    Cos,
     Add,
     Sub,
     Dot,
     Cross,
     Invert,
-    Normalise,
+    Combine,        
+}
+
+public enum ObjType
+{
+    Number,
+    Vector,
 }
 
 public class FuncIO
@@ -44,66 +48,64 @@ public class FuncIO
 
 static class TypeFunctions
 {
-   public static FuncIO EvaluateFunction(TypeEnum type, Recepticle vec1, Recepticle vec2)
+   public static FuncIO EvaluateFunction(FuncType type, Recepticle vec1, Recepticle vec2)
    {
        string strHead = "Math";
        string strBody = "";
        Vector3 vec = Vector3.negativeInfinity;
        float value = Mathf.NegativeInfinity;
-       bool fsBool = true;
-       int fontSize;
+       bool numTypeb = true;
+       
        switch (type)
        {
-           case TypeEnum.Number:
-               strHead = "";
-               strBody = StrBody((int) value);
-               fsBool = false;
-               break;
-           case TypeEnum.Vector:
-               strHead = StrHead("Vec");
-               strBody = StrBody(vec);
-               break;
-           case TypeEnum.Add:
+           case FuncType.Add:
                vec = vec1.GetVector() + vec2.GetVector();
                strHead = StrHead("+");
                strBody = StrBody(vec);
                break;
-           case TypeEnum.Sub:
+           case FuncType.Sub:
                vec = vec1.GetVector() - vec2.GetVector();
                strHead = StrHead("-");
                strBody = StrBody(vec);
                break;
-           case TypeEnum.Dot:
+           case FuncType.Dot:
                value = Vector3.Dot(vec1.GetVector(), vec2.GetVector());
                strHead = StrHead(".");
                strBody = StrBody((int) value);
+               numTypeb = false;
                break;
-           case TypeEnum.Cross:
+           case FuncType.Cross:
                vec = Vector3.Cross(vec1.GetVector(), vec2.GetVector());
                strHead = StrHead("x");
                strBody = StrBody(vec);
                break;
-           case TypeEnum.Invert:
+           case FuncType.Invert:
                vec = -vec1.GetVector();
                strHead = StrHead("Inv");
                strBody = StrBody(vec);
                break;
-           case TypeEnum.Normalise:
-               vec = vec1.GetVector().normalized;
-               strHead = StrHead("Norm");
-               strBody = StrBodyF(vec);
+           case FuncType.Sin:
+               value = Mathf.Sin(Mathf.Deg2Rad * vec1.GetValue());
+               strHead = StrHead("Sin");
+               strBody = StrBody(value);
+               numTypeb = false;
                break;
-       }
-
-       if (fsBool)
-       {
-           fontSize = Mathf.RoundToInt(Mathf.Min((7f / strBody.Length) * 80f,80f));
-       }
-       else
-       {
-           fontSize = Mathf.RoundToInt(Mathf.Min((2f / strBody.Length) * 200f,200f));
-       }
+           case FuncType.Cos:
+               value = Mathf.Cos(Mathf.Deg2Rad * vec1.GetValue());
+               strHead = StrHead("Cos");
+               strBody = StrBody(value);
+               numTypeb = false;
+               break;
+           case FuncType.Combine:
+               value = vec1.GetValue() * 10 + vec2.GetValue();
+               strHead = StrHead("Num");
+               strBody = StrBody(value);
+               numTypeb = false;
+               break;
+       } 
        
+       var fontSize = Mathf.RoundToInt((numTypeb) ? Mathf.Min((2f / strBody.Length) * 200f, 200f) : Mathf.Min((7f / strBody.Length) * 80f,80f));
+
        return new FuncIO(vec, value, strHead, strBody, fontSize);
    }
    
@@ -116,14 +118,14 @@ static class TypeFunctions
    { 
        return "(" + (int) v.x + "," + (int) v.y + "," + (int) v.z + ")";
    }
-
-   private static string StrBodyF(Vector3 v)
-   {
-       return "(" + (int)(v.x * 100)/100f + "," + (int)(v.y * 100)/100f + "," + (int)(v.z * 100)/100f + ")";
-   }
    
     private static string StrBody(int n)
     {
         return n.ToString();
+    }
+
+    private static string StrBody(float q)
+    {
+        return ((int)(q * 100)/100f).ToString();
     }
 }

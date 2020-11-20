@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3536141216346342778}
   - component: {fileID: 6991146676148286660}
   - component: {fileID: 2414801224394012489}
+  - component: {fileID: 4906868717976130753}
   m_Layer: 0
-  m_Name: Recepticle Vec
+  m_Name: Recepticle
   m_TagString: Receiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,3 +111,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!114 &4906868717976130753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8547464346282185467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d046d15935a1014d0ac87caa875efeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texGo: {fileID: 0}
+  text: 
+  fontSize: 0

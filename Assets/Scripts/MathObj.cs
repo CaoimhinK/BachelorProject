@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MathObj : MonoBehaviour
 {
-    public TypeEnum type;
-    public int value;
+    public ObjType type;
+    public float value;
     public Vector3 vecValue;
 }

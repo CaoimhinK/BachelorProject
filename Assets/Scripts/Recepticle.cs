@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Recepticle : MonoBehaviour
 {
-    public TypeEnum type;
+    public ObjType type;
+
+    private bool _contentChanged;
     
     private GameObject _heldGo;
     private MeshRenderer _ren;
@@ -20,9 +22,13 @@ public class Recepticle : MonoBehaviour
         _ren.material = _defaultMat;
         _fullMat = Instantiate(_defaultMat);
         _fullMat.color = new Color(0.6f,1,0.6f);
+        var tex = GetComponent<TextTexture>();
+        tex.text = "0";
+        tex.fontSize= 200;
+        tex.Render();
     }
 
-    public int GetValue()
+    public float GetValue()
     {
         var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.value : 0;
         return val;
@@ -39,11 +45,22 @@ public class Recepticle : MonoBehaviour
         return _heldGo;
     }
 
+    public bool HasContentChanged()
+    {
+        return _contentChanged;
+    }
+
+    public void ListenToContent()
+    {
+        _contentChanged = false;
+    }
+
     public void GiveObject(GameObject go)
     {
         if (_heldGo) Destroy(_heldGo);
         _ren.material = _fullMat;
         _heldGo = go;
+        _contentChanged = true;
     }
 
     public GameObject TakeObject()
@@ -51,6 +68,7 @@ public class Recepticle : MonoBehaviour
         GameObject giveGo = _heldGo;
         _ren.material = _defaultMat;
         _heldGo = null;
+        _contentChanged = true;
         return giveGo;
     }
 }
