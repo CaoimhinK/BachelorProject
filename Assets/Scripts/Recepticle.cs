@@ -6,6 +6,7 @@ using UnityEngine;
 public class Recepticle : MonoBehaviour
 {
     public ObjType type;
+    public float defaultValue;
 
     private bool _contentChanged;
     
@@ -23,14 +24,14 @@ public class Recepticle : MonoBehaviour
         _fullMat = Instantiate(_defaultMat);
         _fullMat.color = new Color(0.6f,1,0.6f);
         var tex = GetComponent<TextTexture>();
-        tex.text = "0";
+        tex.text = defaultValue.ToString();
         tex.fontSize= 200;
         tex.Render();
     }
 
     public float GetValue()
     {
-        var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.value : 0;
+        var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.value : defaultValue;
         return val;
     }
 
@@ -38,6 +39,12 @@ public class Recepticle : MonoBehaviour
     {
         var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.vecValue : Vector3.zero;
         return val;
+    }
+
+    public Matrix3x3 GetMatrix()
+    {
+        var mat = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.matValue : Matrix3x3.identity;
+        return mat;
     }
 
     public bool HasObject()

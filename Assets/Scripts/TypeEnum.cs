@@ -10,13 +10,15 @@ public enum FuncType
     Dot,
     Cross,
     Invert,
-    Combine,        
+    Combine,
+    Negative,
 }
 
 public enum ObjType
 {
     Number,
     Vector,
+    Matrix,
 }
 
 public class FuncIO
@@ -99,6 +101,12 @@ static class TypeFunctions
            case FuncType.Combine:
                value = vec1.GetValue() * 10 + vec2.GetValue();
                strHead = StrHead("Num");
+               strBody = StrBody(value);
+               numTypeb = false;
+               break;
+           case FuncType.Negative:
+               value = -vec1.GetValue();
+               strHead = StrHead("Neg");
                strBody = StrBody(value);
                numTypeb = false;
                break;

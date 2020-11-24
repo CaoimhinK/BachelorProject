@@ -46,26 +46,27 @@ public class GrabController : MonoBehaviour
                     if (currentGo) Destroy(currentGo);
                     StartCoroutine(nameof(Spawn), spawner);
                 }
-                else
+                else if (hitGo.TryGetComponent<Recepticle>(out var rec))
                 {
-                    if (hitGo.TryGetComponent<Recepticle>(out var rec))
+                    if (currentGo)
                     {
-                        if (currentGo)
+                        if (currentGo.GetComponent<MathObj>().Type == rec.type)
                         {
-                            if (currentGo.GetComponent<MathObj>().type == rec.type)
-                            {
-                                StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
-                            }
-                            else
-                            {
-                                StartCoroutine(nameof(Warn), hitGo);
-                            }
+                            StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
                         }
-                        else if (rec.HasObject())
+                        else
                         {
-                            StartCoroutine(nameof(TakeRec), rec);
+                            StartCoroutine(nameof(Warn), hitGo);
                         }
                     }
+                    else if (rec.HasObject())
+                    {
+                        StartCoroutine(nameof(TakeRec), rec);
+                    }
+                }
+                else if (hitGo.TryGetComponent<MatrixApplier>(out var app))
+                {
+                    app.ApplyMatrix();
                 }
             }
         }
@@ -83,8 +84,8 @@ public class GrabController : MonoBehaviour
 
         public Holder(GameObject hitGo, Recepticle rec)
         {
-            this.HitGo = hitGo;
-            this.Rec = rec;
+            HitGo = hitGo;
+            Rec = rec;
         }
     }
 

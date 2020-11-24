@@ -10,14 +10,17 @@ public class Spawner : MonoBehaviour
     public GameObject spawnGoPrefab;
     public float spawnValue;
     public Vector3 spawnVecValue;
+    public Matrix3x3 spawnMatValue;
 
     private TextTexture _textTex;
     private VectorContainer _cont;
+    private MatrixContainer _matCont;
     private Function _func;
 
     private void Start()
     {
         _cont = GetComponent<VectorContainer>();
+        _matCont = GetComponent<MatrixContainer>();
         _func = GetComponent<Function>();
         GetComponent<MeshRenderer>().material.color = ColorPalette.Colors[type];
         _textTex = GetComponent<TextTexture>();
@@ -40,7 +43,13 @@ public class Spawner : MonoBehaviour
         _textTex.fontSize = fontSize;
         _textTex.text = strHead + strBody;
         _textTex.Render();
-        
+    }
+
+    public void ChangeText(string text, int fontSize)
+    {
+        _textTex.fontSize = fontSize;
+        _textTex.text = text;
+        _textTex.Render();
     }
 
     public GameObject SpawnObject()
@@ -50,7 +59,7 @@ public class Spawner : MonoBehaviour
         var mat = go.GetComponent<MeshRenderer>().material;
         
         var mo = go.GetComponent<MathObj>();
-        mo.type = type;
+        mo.Type = type;
         mat.color = ColorPalette.Colors[type];
         
         var tex = go.GetComponent<TextTexture>();
@@ -91,6 +100,18 @@ public class Spawner : MonoBehaviour
                 var size = (7f / strBody.Length) * 80f;
                 tex.fontSize = Mathf.RoundToInt(size);
                 tex.text = strHead + strBody;
+                break;
+            case (ObjType.Matrix):
+                if (_matCont)
+                {
+                    mo.matValue = _matCont.mat;
+                }
+                else
+                {
+                    mo.matValue = spawnMatValue;
+                }
+                tex.fontSize = 200;
+                tex.text = "M" + Convert.ToChar(0x2080 + MatrixContainer.GetMatrixCount());
                 break;
         }
         return go;

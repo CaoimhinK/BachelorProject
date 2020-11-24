@@ -24,20 +24,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MathObj.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MathObj.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recepticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recepticle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Deckblatt.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Deckblatt.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bachelor.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelor.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +45,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTextureEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatCol.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -77,16 +77,23 @@
         <option value="$PROJECT_DIR$/Assets/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewGrabScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixRow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixCol.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixColumn.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Function.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatCol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Applier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" />
       </list>
     </option>
   </component>
@@ -149,6 +156,8 @@
       <workItem from="1605883864075" duration="4378000" />
       <workItem from="1605889846419" duration="2133000" />
       <workItem from="1605893556962" duration="282000" />
+      <workItem from="1606217053248" duration="4435000" />
+      <workItem from="1606221618452" duration="15401000" />
     </task>
     <servers />
   </component>

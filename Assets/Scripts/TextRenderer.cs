@@ -11,7 +11,7 @@ public class TextRenderer : MonoBehaviour
 
     public static TextRenderer Instance;
 
-    public void Start()
+    public void Awake()
     {
         Instance = this;
     }
