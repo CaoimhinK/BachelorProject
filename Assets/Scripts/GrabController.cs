@@ -5,19 +5,21 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class GrabController : MonoBehaviour
 {
     public Transform grabPos;
+    public Canvas ui;
     
     private const float GrabDuration = 0.2f;
     
     private Camera _cam;
-    
-    public GameObject currentGo = null;
 
+    private Inventory _inventory;
+    private GameObject _currentGo = null;
     private bool _animating = false;
     private float _startTime;
     private Vector3 _startPos;
@@ -28,6 +30,7 @@ public class GrabController : MonoBehaviour
     void Start()
     {
         _cam = Camera.main;
+        _inventory = GetComponent<Inventory>();
     }
 
     void Update()
@@ -43,14 +46,18 @@ public class GrabController : MonoBehaviour
                 var hitGo = hitInfo.collider.gameObject;
                 if (hitGo.TryGetComponent<Spawner>(out var spawner))
                 {
-                    if (currentGo) Destroy(currentGo);
+                    if (_currentGo)
+                    {
+                        _inventory.PushGo(_currentGo);
+                        _currentGo.SetActive(false);
+                    }
                     StartCoroutine(nameof(Spawn), spawner);
                 }
                 else if (hitGo.TryGetComponent<Recepticle>(out var rec))
                 {
-                    if (currentGo)
+                    if (_currentGo)
                     {
-                        if (currentGo.GetComponent<MathObj>().Type == rec.type)
+                        if (_currentGo.GetComponent<MathObj>().Type == rec.type)
                         {
                             StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
                         }
@@ -72,8 +79,33 @@ public class GrabController : MonoBehaviour
         }
         else if (Input.GetButtonDown("Throw"))
         {
-            if (currentGo) Destroy(currentGo);
-            currentGo = null;
+            if (_currentGo) Destroy(_currentGo);
+            _currentGo = null;
+        }
+        else if (Input.GetButtonDown("Restore"))
+        {
+            if (_inventory.HasItem())
+            {
+                if (_currentGo)
+                {
+                    _currentGo.SetActive(false);
+                    _currentGo = _inventory.PushPop(_currentGo);
+                    _currentGo.SetActive(true);
+                }
+                else
+                {
+                    _currentGo = _inventory.PopGo();
+                    _currentGo.SetActive(true);
+                }
+            }
+            else
+            {
+                if (_currentGo)
+                {
+                    _currentGo.SetActive(false);
+                    _inventory.PushGo(_currentGo);
+                }
+            }
         }
     }
 
@@ -92,37 +124,37 @@ public class GrabController : MonoBehaviour
     void Animate()
     {
         var elapsedTime = Time.time - _startTime;
-        currentGo.transform.position = Vector3.Lerp(_startPos, _endPos, elapsedTime / GrabDuration);
+        _currentGo.transform.position = Vector3.Lerp(_startPos, _endPos, elapsedTime / GrabDuration);
     }
 
     IEnumerator TakeRec(Recepticle rec)
     {
-        currentGo = rec.TakeObject();
-        StartAnim(currentGo.transform.position, grabPos.transform.position);
+        _currentGo = rec.TakeObject();
+        StartAnim(_currentGo.transform.position, grabPos.transform.position);
         yield return new WaitForSeconds(GrabDuration);
-        currentGo.transform.SetParent(grabPos);
-        currentGo.transform.localPosition = Vector3.zero;
+        _currentGo.transform.SetParent(grabPos);
+        _currentGo.transform.localPosition = Vector3.zero;
         StopAnim();
     }
 
     IEnumerator GiveRec(Holder hold)
     {
         var hitPoint = hold.HitGo.transform.position;
-        StartAnim(currentGo.transform.position, hitPoint + Vector3.up * 0.05f);
+        StartAnim(_currentGo.transform.position, hitPoint + Vector3.up * 0.05f);
         yield return new WaitForSeconds(GrabDuration);
-        hold.Rec.GiveObject(currentGo);
-        currentGo.transform.SetParent(hold.HitGo.transform);
-        currentGo = null;
+        hold.Rec.GiveObject(_currentGo);
+        _currentGo.transform.SetParent(hold.HitGo.transform);
+        _currentGo = null;
         StopAnim();
     }
 
     IEnumerator Spawn(Spawner spawner)
     {
-        currentGo = spawner.SpawnObject();
-        StartAnim(currentGo.transform.localPosition, grabPos.transform.position);
-        currentGo.transform.SetParent(grabPos);
+        _currentGo = spawner.SpawnObject();
+        StartAnim(_currentGo.transform.localPosition, grabPos.transform.position);
+        _currentGo.transform.SetParent(grabPos);
         yield return new WaitForSeconds(GrabDuration);
-        currentGo.transform.localPosition = Vector3.zero;
+        _currentGo.transform.localPosition = Vector3.zero;
         StopAnim();
     }
 

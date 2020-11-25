@@ -11,6 +11,7 @@
           <e p="ColorPalette.cs" t="Include" />
           <e p="Function.cs" t="Include" />
           <e p="GrabController.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
           <e p="MatCol.cs" t="Include" />
           <e p="MathObj.cs" t="Include" />
           <e p="MatrixApplier.cs" t="Include" />
@@ -20,7 +21,6 @@
           <e p="Spawner.cs" t="Include" />
           <e p="TextRenderer.cs" t="Include" />
           <e p="TextTexture.cs" t="Include" />
-          <e p="TextTextureEditor.cs" t="Include" />
           <e p="TypeEnum.cs" t="Include" />
           <e p="VectorContainer.cs" t="Include" />
         </e>
