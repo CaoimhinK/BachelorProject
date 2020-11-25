@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     public GameObject spawnGoPrefab;
     public float spawnValue;
     public Vector3 spawnVecValue;
-    public Matrix3x3 spawnMatValue;
+    public Matrix4x4 spawnMatValue;
 
     private TextTexture _textTex;
     private VectorContainer _cont;

@@ -21,7 +21,7 @@ public class MathObj : MonoBehaviour
     }
     public float value;
     public Vector3 vecValue;
-    public Matrix3x3 matValue = Matrix3x3.identity;
+    public Matrix4x4 matValue = Matrix4x4.identity;
 
     private void OnDestroy()
     {

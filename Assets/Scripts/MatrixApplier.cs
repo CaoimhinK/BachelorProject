@@ -22,10 +22,8 @@ public class MatrixApplier : MonoBehaviour
     {
         if (!_animating)
         {
-            var pos2D = new Vector3(go.transform.localPosition.x, go.transform.localPosition.z, 1);
-            var result = rec.GetMatrix().Multiply(pos2D);
-            Debug.Log(pos2D + " " + result);
-            StartCoroutine(nameof(MoveGo), new Vector3(result.x, go.transform.localPosition.y, result.y));
+            var result = rec.GetMatrix().MultiplyPoint(go.transform.localPosition);
+            StartCoroutine(nameof(MoveGo), result);
         }
     }
 
@@ -33,6 +31,8 @@ public class MatrixApplier : MonoBehaviour
     {
         var currentTime = Time.time - _startTime;
         go.transform.localPosition = Vector3.Lerp(_startPos, _endPos, currentTime / 0.5f);
+        Debug.Log(go.transform.position);
+        Debug.Log(go.transform.localPosition);
     }
     
     IEnumerator MoveGo(Vector3 newPos)

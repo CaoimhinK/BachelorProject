@@ -41,9 +41,9 @@ public class Recepticle : MonoBehaviour
         return val;
     }
 
-    public Matrix3x3 GetMatrix()
+    public Matrix4x4 GetMatrix()
     {
-        var mat = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.matValue : Matrix3x3.identity;
+        var mat = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.matValue : Matrix4x4.identity;
         return mat;
     }
 

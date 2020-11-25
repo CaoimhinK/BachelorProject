@@ -20,21 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Function.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MatCol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MatCol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Deckblatt.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Deckblatt.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bachelor.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../bachelor.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +38,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/dd/dd7cfd8e/Matrix4x4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/f5/56e69684/Vector4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTextureEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatCol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/3c/92c392cc/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,14 +81,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Function.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatCol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Applier.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatCol.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" />
       </list>
     </option>
   </component>
@@ -158,6 +153,7 @@
       <workItem from="1605893556962" duration="282000" />
       <workItem from="1606217053248" duration="4435000" />
       <workItem from="1606221618452" duration="15401000" />
+      <workItem from="1606300177463" duration="5859000" />
     </task>
     <servers />
   </component>
