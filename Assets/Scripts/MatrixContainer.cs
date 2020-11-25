@@ -5,26 +5,33 @@ using UnityEngine.Animations;
 
 public class MatrixContainer : MonoBehaviour
 {
-    public Matrix4x4 mat;
+    public Matrix4x4 Mat
+    {
+        get
+        {
+            _mat = CreateMatrix(cols);
+            return _mat;
+        }
+    }
     public MatCol[] cols;
     public Axis axis;
 
+    private Matrix4x4 _mat;
     private static int _matCount = 0;
 
     private void Start()
     {
-        mat = CreateMatrix(cols);
+        _mat = CreateMatrix(cols);
         var spaw = GetComponent<Spawner>();
         spaw.LoadTex();
-        spaw.ChangeText("M" + Convert.ToChar(2080 + MatrixContainer.GetMatrixCount()), 200);
+        spaw.ChangeText("M", 200);
     }
 
     public void Update()
     {
         if (cols.Any(col => col.HasContentChanged()))
         {
-            mat = CreateMatrix(cols);
-            GetComponent<Spawner>().ChangeText("M" + Convert.ToChar(2080 + MatrixContainer.GetMatrixCount()), 200);
+            _mat = CreateMatrix(cols);
             foreach (var col in cols)
             {
                 col.ListenToContent();
@@ -87,8 +94,17 @@ public class MatrixContainer : MonoBehaviour
         _matCount--;
     }
 
-    public static int GetMatrixCount()
+    public static string GetMatrixString(out int fontSize)
     {
-        return _matCount;
+        int matCount = _matCount;
+        string str = "";
+        do
+        {
+            var rem = matCount % 10;
+            str = Convert.ToChar(0x2080 + rem) + str;
+            matCount /= 10;
+        } while (matCount > 0);
+        fontSize = 200 - (100 * str.Length / 4);
+        return "M" + str;
     }
 }

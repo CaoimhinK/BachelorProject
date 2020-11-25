@@ -54,7 +54,8 @@ public class Spawner : MonoBehaviour
 
     public GameObject SpawnObject()
     {
-        GameObject go = Instantiate(spawnGoPrefab, transform.position, transform.rotation);
+        Transform trans = transform;
+        GameObject go = Instantiate(spawnGoPrefab, trans.position, trans.rotation);
         
         var mat = go.GetComponent<MeshRenderer>().material;
         
@@ -104,14 +105,14 @@ public class Spawner : MonoBehaviour
             case (ObjType.Matrix):
                 if (_matCont)
                 {
-                    mo.matValue = _matCont.mat;
+                    mo.matValue = _matCont.Mat;
                 }
                 else
                 {
                     mo.matValue = spawnMatValue;
                 }
-                tex.fontSize = 200;
-                tex.text = "M" + Convert.ToChar(0x2080 + MatrixContainer.GetMatrixCount());
+                tex.text = MatrixContainer.GetMatrixString(out var fontSize);
+                tex.fontSize = fontSize;
                 break;
         }
         return go;

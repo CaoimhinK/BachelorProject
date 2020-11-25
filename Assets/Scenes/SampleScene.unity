@@ -2026,6 +2026,22 @@ PrefabInstance:
       propertyPath: type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e00
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e11
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e22
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e33
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.25
@@ -2098,23 +2114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bd788bab6be41a7becd1685d2f941d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat:
-    e00: 0
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 0
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 0
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 0
   cols:
   - {fileID: 911280648}
   - {fileID: 45782403}
@@ -3722,6 +3721,22 @@ PrefabInstance:
     - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: type
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e00
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e11
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e22
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+      propertyPath: spawnMatValue.e33
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7547,23 +7562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bd788bab6be41a7becd1685d2f941d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat:
-    e00: 0
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 0
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 0
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 0
   cols:
   - {fileID: 969798980}
   - {fileID: 805210822}

@@ -7,6 +7,8 @@ public class Recepticle : MonoBehaviour
 {
     public ObjType type;
     public float defaultValue;
+    public Vector3 defaultVector = Vector3.zero;
+    public Matrix4x4 defaultMatrix = Matrix4x4.identity;
 
     private bool _contentChanged;
     
@@ -14,6 +16,7 @@ public class Recepticle : MonoBehaviour
     private MeshRenderer _ren;
     private Material _defaultMat;
     private Material _fullMat;
+    private TextTexture _tex;
 
     public void Start()
     {
@@ -23,10 +26,23 @@ public class Recepticle : MonoBehaviour
         _ren.material = _defaultMat;
         _fullMat = Instantiate(_defaultMat);
         _fullMat.color = new Color(0.6f,1,0.6f);
-        var tex = GetComponent<TextTexture>();
-        tex.text = defaultValue.ToString();
-        tex.fontSize= 200;
-        tex.Render();
+        _tex = GetComponent<TextTexture>();
+        switch (type)
+        {
+            case ObjType.Matrix:
+                _tex.text = "I";
+                _tex.fontSize = 200;
+                break;
+            case ObjType.Number:
+                _tex.text = defaultValue.ToString();
+                _tex.fontSize = 200;
+                break;
+            case ObjType.Vector:
+                _tex.text = $"Vec\n({defaultVector.x},{defaultVector.y},{defaultVector.z}";
+                _tex.fontSize = 80;
+                break;
+        }
+        _tex.Render();
     }
 
     public float GetValue()
@@ -37,13 +53,13 @@ public class Recepticle : MonoBehaviour
 
     public Vector3 GetVector()
     {
-        var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.vecValue : Vector3.zero;
+        var val = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.vecValue : defaultVector;
         return val;
     }
 
     public Matrix4x4 GetMatrix()
     {
-        var mat = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.matValue : Matrix4x4.identity;
+        var mat = ((_heldGo) && _heldGo.TryGetComponent<MathObj>(out var mo)) ? mo.matValue : defaultMatrix;
         return mat;
     }
 
@@ -74,6 +90,7 @@ public class Recepticle : MonoBehaviour
     {
         GameObject giveGo = _heldGo;
         _ren.material = _defaultMat;
+        _tex.Render();
         _heldGo = null;
         _contentChanged = true;
         return giveGo;

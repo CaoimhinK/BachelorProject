@@ -104,6 +104,7 @@ public class GrabController : MonoBehaviour
                 {
                     _currentGo.SetActive(false);
                     _inventory.PushGo(_currentGo);
+                    _currentGo = null;
                 }
             }
         }

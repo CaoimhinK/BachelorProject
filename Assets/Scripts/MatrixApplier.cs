@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
 
 public class MatrixApplier : MonoBehaviour
 {
@@ -23,7 +24,14 @@ public class MatrixApplier : MonoBehaviour
         if (!_animating)
         {
             var result = rec.GetMatrix().MultiplyPoint(go.transform.localPosition);
-            StartCoroutine(nameof(MoveGo), result);
+            if (!float.IsNaN(result.x))
+            {
+                StartCoroutine(nameof(MoveGo), result);
+            }
+            else
+            {
+                Debug.Log("is NaN");
+            }
         }
     }
 
@@ -31,8 +39,6 @@ public class MatrixApplier : MonoBehaviour
     {
         var currentTime = Time.time - _startTime;
         go.transform.localPosition = Vector3.Lerp(_startPos, _endPos, currentTime / 0.5f);
-        Debug.Log(go.transform.position);
-        Debug.Log(go.transform.localPosition);
     }
     
     IEnumerator MoveGo(Vector3 newPos)

@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8547464346282185467}
-  m_Mesh: {fileID: -2432090755550338912, guid: c9a47630b7702f78aa53b7e36ad90758, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 85c86a4d716afa638ae00f49c314bb34, type: 3}
 --- !u!23 &3536141216346342778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: c9a47630b7702f78aa53b7e36ad90758, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 85c86a4d716afa638ae00f49c314bb34, type: 3}
 --- !u!114 &2414801224394012489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +111,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  defaultValue: 0
+  defaultVector: {x: 0, y: 0, z: 0}
+  defaultMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!114 &4906868717976130753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d046d15935a1014d0ac87caa875efeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texGo: {fileID: 0}
   text: 
   fontSize: 0
