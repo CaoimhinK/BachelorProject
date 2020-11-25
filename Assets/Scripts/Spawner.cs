@@ -24,7 +24,6 @@ public class Spawner : MonoBehaviour
         _func = GetComponent<Function>();
         GetComponent<MeshRenderer>().material.color = ColorPalette.Colors[type];
         _textTex = GetComponent<TextTexture>();
-        spawnGoPrefab.GetComponent<TextTexture>().text = _textTex.text;
         _textTex.Render();
     }
 
@@ -33,7 +32,6 @@ public class Spawner : MonoBehaviour
         if (!_textTex)
         {
             _textTex = GetComponent<TextTexture>();
-            spawnGoPrefab.GetComponent<TextTexture>().text = _textTex.text;
             _textTex.Render();
         }
     }
