@@ -9,7 +9,8 @@ using UnityEngine.XR;
 
 public class Inventory : MonoBehaviour
 {
-    public RawImage[] images;
+    public RawImage[] textures;
+    public RawImage[] bgs;
 
     private Queue<GameObject> _gos;
 
@@ -61,13 +62,15 @@ public class Inventory : MonoBehaviour
 
         while (index < 3 - _gos.Count)
         {
-            images[index].texture = null;
+            textures[index].texture = null;
+            bgs[index].color = Color.white;
             index++;
         }
         while (ator.MoveNext() && ator.Current)
         {
             var tex = ator.Current.GetComponent<TextTexture>();
-            images[index].texture = TextRenderer.Instance.RenderText(tex.text, tex.fontSize);
+            textures[index].texture = TextRenderer.Instance.RenderText(tex.text, tex.fontSize);
+            bgs[index].color = ColorPalette.Colors[ator.Current.GetComponent<MathObj>().Type];
             index++;
         }
         ator.Dispose();

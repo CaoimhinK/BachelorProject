@@ -6,19 +6,17 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class GrabController : MonoBehaviour
 {
     public Transform grabPos;
-    public Canvas ui;
+    public Inventory inventory;
     
     private const float GrabDuration = 0.2f;
     
-    private Camera _cam;
-
-    private Inventory _inventory;
     private GameObject _currentGo = null;
     private bool _animating = false;
     private float _startTime;
@@ -26,12 +24,6 @@ public class GrabController : MonoBehaviour
     private Vector3 _endPos;
     private Quaternion _startRot;
     private Quaternion _endRot;
-    
-    void Start()
-    {
-        _cam = Camera.main;
-        _inventory = GetComponent<Inventory>();
-    }
 
     void Update()
     {
@@ -48,14 +40,14 @@ public class GrabController : MonoBehaviour
                 {
                     if (_currentGo)
                     {
-                        _inventory.PushGo(_currentGo);
+                        inventory.PushGo(_currentGo);
                         _currentGo.SetActive(false);
                     }
                     StartCoroutine(nameof(Spawn), spawner);
                 }
                 else if (hitGo.TryGetComponent<Recepticle>(out var rec))
                 {
-                    if (_currentGo)
+                    if (_currentGo && !rec.HasObject())
                     {
                         if (_currentGo.GetComponent<MathObj>().Type == rec.type)
                         {
@@ -63,12 +55,16 @@ public class GrabController : MonoBehaviour
                         }
                         else
                         {
-                            StartCoroutine(nameof(Warn), hitGo);
+                            StartCoroutine(nameof(Warn), new Holder(hitGo, rec));
                         }
                     }
-                    else if (rec.HasObject())
+                    else if (_currentGo && rec.HasObject())
                     {
-                        StartCoroutine(nameof(TakeRec), rec);
+                        StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
+                    }
+                    else if (!_currentGo && rec.HasObject())
+                    {
+                        // StartCoroutine(nameof(TakeRec), new Holder(hitGo, rec));
                     }
                 }
                 else if (hitGo.TryGetComponent<MatrixApplier>(out var app))
@@ -84,17 +80,17 @@ public class GrabController : MonoBehaviour
         }
         else if (Input.GetButtonDown("Restore"))
         {
-            if (_inventory.HasItem())
+            if (inventory.HasItem())
             {
                 if (_currentGo)
                 {
                     _currentGo.SetActive(false);
-                    _currentGo = _inventory.PushPop(_currentGo);
+                    _currentGo = inventory.PushPop(_currentGo);
                     _currentGo.SetActive(true);
                 }
                 else
                 {
-                    _currentGo = _inventory.PopGo();
+                    _currentGo = inventory.PopGo();
                     _currentGo.SetActive(true);
                 }
             }
@@ -103,7 +99,7 @@ public class GrabController : MonoBehaviour
                 if (_currentGo)
                 {
                     _currentGo.SetActive(false);
-                    _inventory.PushGo(_currentGo);
+                    inventory.PushGo(_currentGo);
                     _currentGo = null;
                 }
             }
@@ -128,9 +124,9 @@ public class GrabController : MonoBehaviour
         _currentGo.transform.position = Vector3.Lerp(_startPos, _endPos, elapsedTime / GrabDuration);
     }
 
-    IEnumerator TakeRec(Recepticle rec)
+    IEnumerator TakeRec(Holder hold)
     {
-        _currentGo = rec.TakeObject();
+        _currentGo = hold.Rec.TakeObject();
         StartAnim(_currentGo.transform.position, grabPos.transform.position);
         yield return new WaitForSeconds(GrabDuration);
         _currentGo.transform.SetParent(grabPos);
@@ -159,9 +155,9 @@ public class GrabController : MonoBehaviour
         StopAnim();
     }
 
-    IEnumerator Warn(GameObject hitGo)
+    IEnumerator Warn(Holder hold)
     {
-        var mat = hitGo.GetComponent<MeshRenderer>().material;
+        var mat = hold.HitGo.GetComponent<MeshRenderer>().material;
         var col = mat.color;
         mat.color = Color.red;
         yield return new WaitForSeconds(0.1f);

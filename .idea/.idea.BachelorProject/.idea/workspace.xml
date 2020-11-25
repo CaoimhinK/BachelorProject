@@ -21,14 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recepticle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recepticle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Function Spawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Function Spawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MathObj.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MathObj.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spawner.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spawner.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/untitled.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/untitled.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextRenderer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextRenderer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VectorSpawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VectorSpawner.prefab.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +90,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Invertory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextTextureEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
       </list>
     </option>
   </component>
@@ -158,7 +162,7 @@
       <workItem from="1606217053248" duration="4435000" />
       <workItem from="1606221618452" duration="15401000" />
       <workItem from="1606300177463" duration="14438000" />
-      <workItem from="1606318289640" duration="8238000" />
+      <workItem from="1606318289640" duration="13820000" />
     </task>
     <servers />
   </component>

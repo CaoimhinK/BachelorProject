@@ -24,6 +24,21 @@ public class Spawner : MonoBehaviour
         _func = GetComponent<Function>();
         GetComponent<MeshRenderer>().material.color = ColorPalette.Colors[type];
         _textTex = GetComponent<TextTexture>();
+        if (!_func)
+        {
+            switch (type)
+            {
+                case ObjType.Matrix:
+                    ChangeText("M", 200);
+                    break;
+                case ObjType.Number:
+                    ChangeText(spawnValue.ToString(), 200);
+                    break;
+                case ObjType.Vector:
+                    ChangeText($"Vec\n({spawnVecValue.x},{spawnVecValue.y},{spawnVecValue.z})", 80);
+                    break;
+            }
+        }
         _textTex.Render();
     }
 
