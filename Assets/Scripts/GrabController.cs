@@ -64,12 +64,16 @@ public class GrabController : MonoBehaviour
                     }
                     else if (!_currentGo && rec.HasObject())
                     {
-                        // StartCoroutine(nameof(TakeRec), new Holder(hitGo, rec));
+                        StartCoroutine(nameof(TakeRec), new Holder(hitGo, rec));
                     }
                 }
-                else if (hitGo.TryGetComponent<MatrixApplier>(out var app))
+                else if (hitGo.TryGetComponent<MatrixApplier>(out var mapp))
                 {
-                    app.ApplyMatrix();
+                    mapp.ApplyMatrix();
+                }
+                else if (hitGo.TryGetComponent<NormalApplier>(out var napp))
+                {
+                    napp.ApplyNormal();
                 }
             }
         }

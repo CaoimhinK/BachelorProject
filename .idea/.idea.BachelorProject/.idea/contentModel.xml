@@ -17,6 +17,7 @@
           <e p="MatrixApplier.cs" t="Include" />
           <e p="MatrixContainer.cs" t="Include" />
           <e p="MoveScript.cs" t="Include" />
+          <e p="NormalApplier.cs" t="Include" />
           <e p="Recepticle.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
           <e p="TextRenderer.cs" t="Include" />
