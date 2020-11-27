@@ -60,7 +60,7 @@ public class GrabController : MonoBehaviour
                     }
                     else if (_currentGo && rec.HasObject())
                     {
-                        StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
+                        StartCoroutine(nameof(SwapRec), new Holder(hitGo, rec));
                     }
                     else if (!_currentGo && rec.HasObject())
                     {
@@ -126,6 +126,21 @@ public class GrabController : MonoBehaviour
     {
         var elapsedTime = Time.time - _startTime;
         _currentGo.transform.position = Vector3.Lerp(_startPos, _endPos, elapsedTime / GrabDuration);
+    }
+
+    IEnumerator SwapRec(Holder hold)
+    {
+        var hitPoint = hold.HitGo.transform.position;
+        StartAnim(_currentGo.transform.position, hitPoint + Vector3.up * 0.05f);
+        yield return new WaitForSeconds(GrabDuration);
+        var temp = _currentGo;
+        _currentGo = hold.Rec.SwapObject(temp);
+        temp.transform.SetParent(hold.HitGo.transform);
+        StartAnim(_currentGo.transform.position, grabPos.transform.position);
+        yield return new WaitForSeconds(GrabDuration);
+        _currentGo.transform.SetParent(grabPos);
+        _currentGo.transform.localPosition = Vector3.zero;
+        StopAnim();
     }
 
     IEnumerator TakeRec(Holder hold)

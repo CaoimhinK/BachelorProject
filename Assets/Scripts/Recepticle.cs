@@ -78,6 +78,14 @@ public class Recepticle : MonoBehaviour
         _contentChanged = false;
     }
 
+    public GameObject SwapObject(GameObject go)
+    {
+        var temp = _heldGo;
+        _heldGo = go;
+        _contentChanged = true;
+        return temp;
+    }
+
     public void GiveObject(GameObject go)
     {
         if (_heldGo) Destroy(_heldGo);
