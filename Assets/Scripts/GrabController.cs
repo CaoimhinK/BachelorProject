@@ -47,22 +47,21 @@ public class GrabController : MonoBehaviour
                 }
                 else if (hitGo.TryGetComponent<Recepticle>(out var rec))
                 {
-                    if (_currentGo && !rec.HasObject())
+                    if (_currentGo)
                     {
-                        if (_currentGo.GetComponent<MathObj>().Type == rec.type)
-                        {
-                            StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
+                        if (_currentGo.GetComponent<MathObj>().Type == rec.type) {
+                            if (rec.HasObject()) {
+                                StartCoroutine(nameof(SwapRec), new Holder(hitGo, rec));
+                            } else {
+                                StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
+                            }
                         }
                         else
                         {
                             StartCoroutine(nameof(Warn), new Holder(hitGo, rec));
                         }
                     }
-                    else if (_currentGo && rec.HasObject())
-                    {
-                        StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
-                    }
-                    else if (!_currentGo && rec.HasObject())
+                    else if (rec.HasObject())
                     {
                         StartCoroutine(nameof(TakeRec), new Holder(hitGo, rec));
                     }
@@ -126,6 +125,21 @@ public class GrabController : MonoBehaviour
     {
         var elapsedTime = Time.time - _startTime;
         _currentGo.transform.position = Vector3.Lerp(_startPos, _endPos, elapsedTime / GrabDuration);
+    }
+
+    IEnumerator SwapRec(Holder hold)
+    {
+        var hitPoint = hold.HitGo.transform.position;
+        StartAnim(_currentGo.transform.position, hitPoint + Vector3.up * 0.05f);
+        yield return new WaitForSeconds(GrabDuration);
+        var temp = _currentGo;
+        _currentGo = hold.Rec.SwapObject(temp);
+        temp.transform.SetParent(hold.HitGo.transform);
+        StartAnim(_currentGo.transform.position, grabPos.transform.position);
+        yield return new WaitForSeconds(GrabDuration);
+        _currentGo.transform.SetParent(grabPos);
+        _currentGo.transform.localPosition = Vector3.zero;
+        StopAnim();
     }
 
     IEnumerator TakeRec(Holder hold)
