@@ -14,9 +14,9 @@ public class GrabController : MonoBehaviour
 {
     public Transform grabPos;
     public Inventory inventory;
-    
+
     private const float GrabDuration = 0.2f;
-    
+
     private GameObject _currentGo = null;
     private bool _animating = false;
     private float _startTime;
