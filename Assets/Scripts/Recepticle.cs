@@ -38,11 +38,19 @@ public class Recepticle : MonoBehaviour
                 _tex.fontSize = 200;
                 break;
             case ObjType.Vector:
-                _tex.text = $"Vec\n({defaultVector.x},{defaultVector.y},{defaultVector.z}";
+                _tex.text = $"Vec\n({TypeFunctions.Round2(defaultVector.x)},{TypeFunctions.Round2(defaultVector.y)},{TypeFunctions.Round2(defaultVector.z)}";
                 _tex.fontSize = 80;
                 break;
         }
         _tex.Render();
+    }
+
+    public void Clear() {
+        Destroy(_heldGo);
+        _heldGo = null;
+        _ren.material = _defaultMat;
+        _tex.Render();
+        _contentChanged = true;
     }
 
     public float GetValue()

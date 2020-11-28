@@ -73,7 +73,7 @@ static class TypeFunctions
            case FuncType.Dot:
                value = Vector3.Dot(vec1.GetVector(), vec2.GetVector());
                strHead = StrHead(".");
-               strBody = StrBody((int) value);
+               strBody = StrBody(value);
                numTypeb = false;
                break;
            case FuncType.Cross:
@@ -112,7 +112,7 @@ static class TypeFunctions
                break;
        } 
        
-       var fontSize = Mathf.RoundToInt((numTypeb) ? Mathf.Min((2f / strBody.Length) * 200f, 200f) : Mathf.Min((7f / strBody.Length) * 80f,80f));
+       var fontSize = 55; //Mathf.RoundToInt((numTypeb) ? Mathf.Min((2f / strBody.Length) * 200f, 200f) : Mathf.Min((7f / strBody.Length) * 80f,80f));
 
        return new FuncIO(vec, value, strHead, strBody, fontSize);
    }
@@ -124,7 +124,11 @@ static class TypeFunctions
    
    private static string StrBody(Vector3 v)
    { 
-       return "(" + (int) v.x + "," + (int) v.y + "," + (int) v.z + ")";
+       return "(" + Round2(v.x) + ",\n" + Round2(v.y) + ",\n" + Round2(v.z) + ")";
+   }
+
+   public static float Round2(float value) {
+       return Mathf.Round(value * 100) / 100f;
    }
    
     private static string StrBody(int n)

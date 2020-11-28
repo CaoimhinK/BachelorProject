@@ -38,21 +38,22 @@ public class GrabController : MonoBehaviour
                 var hitGo = hitInfo.collider.gameObject;
                 if (hitGo.TryGetComponent<Spawner>(out var spawner))
                 {
-                    if (_currentGo)
-                    {
-                        inventory.PushGo(_currentGo);
+                    if (_currentGo && inventory.PushGo(_currentGo))
                         _currentGo.SetActive(false);
-                    }
                     StartCoroutine(nameof(Spawn), spawner);
                 }
                 else if (hitGo.TryGetComponent<Recepticle>(out var rec))
                 {
                     if (_currentGo)
                     {
-                        if (_currentGo.GetComponent<MathObj>().Type == rec.type) {
-                            if (rec.HasObject()) {
+                        if (_currentGo.GetComponent<MathObj>().Type == rec.type)
+                        {
+                            if (rec.HasObject())
+                            {
                                 StartCoroutine(nameof(SwapRec), new Holder(hitGo, rec));
-                            } else {
+                            }
+                            else
+                            {
                                 StartCoroutine(nameof(GiveRec), new Holder(hitGo, rec));
                             }
                         }
@@ -74,12 +75,18 @@ public class GrabController : MonoBehaviour
                 {
                     napp.ApplyNormal();
                 }
+                else if (hitGo.TryGetComponent<DelButton>(out var but))
+                {
+                    but.PushButton();
+                }
             }
         }
         else if (Input.GetButtonDown("Throw"))
         {
-            if (_currentGo) Destroy(_currentGo);
-            _currentGo = null;
+            if (_currentGo) {
+                Destroy(_currentGo);
+                _currentGo = null;
+            }
         }
         else if (Input.GetButtonDown("Restore"))
         {
@@ -101,11 +108,25 @@ public class GrabController : MonoBehaviour
             {
                 if (_currentGo)
                 {
-                    _currentGo.SetActive(false);
-                    inventory.PushGo(_currentGo);
-                    _currentGo = null;
+                    if (inventory.PushGo(_currentGo))
+                    {
+                        _currentGo.SetActive(false);
+                        _currentGo = null;
+                    }
                 }
             }
+        }
+        else if (Input.GetButtonDown("Inventory 1"))
+        {
+            _currentGo = inventory.TakeIndex(0, _currentGo);
+        }
+        else if (Input.GetButtonDown("Inventory 2"))
+        {
+            _currentGo = inventory.TakeIndex(1, _currentGo);
+        }
+        else if (Input.GetButtonDown("Inventory 3"))
+        {
+            _currentGo = inventory.TakeIndex(2, _currentGo);
         }
     }
 

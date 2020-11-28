@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
                     ChangeText(spawnValue.ToString(), 200);
                     break;
                 case ObjType.Vector:
-                    ChangeText($"Vec\n({spawnVecValue.x},{spawnVecValue.y},{spawnVecValue.z})", 80);
+                    ChangeText($"Vec\n({TypeFunctions.Round2(spawnVecValue.x).ToString()},\n{TypeFunctions.Round2(spawnVecValue.y)},\n{TypeFunctions.Round2(spawnVecValue.z)})", 55);
                     break;
             }
         }
@@ -110,8 +110,8 @@ public class Spawner : MonoBehaviour
                 }
 
                 var strHead = "Vec\n";
-                var strBody = "(" + (int) mo.vecValue.x + "," + (int) mo.vecValue.y + "," + (int) mo.vecValue.z + ")";
-                var size = (7f / strBody.Length) * 80f;
+                var strBody = "(" + TypeFunctions.Round2(mo.vecValue.x) + ",\n" + TypeFunctions.Round2(mo.vecValue.y) + ",\n" + TypeFunctions.Round2(mo.vecValue.z) + ")";
+                var size = 55f;//(7f / strBody.Length) * 80f;
                 tex.fontSize = Mathf.RoundToInt(size);
                 tex.text = strHead + strBody;
                 break;

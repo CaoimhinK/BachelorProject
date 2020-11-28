@@ -12,29 +12,30 @@ public class Inventory : MonoBehaviour
     public RawImage[] textures;
     public RawImage[] bgs;
 
-    private Queue<GameObject> _gos;
+    private List<GameObject> _gos;
 
     private void Start()
     {
-        _gos = new Queue<GameObject>();
+        _gos = new List<GameObject>();
     }
 
-    public void PushGo(GameObject go)
+    public bool PushGo(GameObject go)
     {
         if (_gos.Count > 2)
         {
-            var shmo = _gos.Dequeue();
-            Destroy(shmo);
+            return false;
         }
-        _gos.Enqueue(go);
+        _gos.Add(go);
         RedrawImages();
+        return true;
     }
 
     public GameObject PopGo()
     {
         if (_gos.Count > 0)
         {
-            var popped = _gos.Dequeue();
+            var popped = _gos.Last<GameObject>();
+            _gos.RemoveAt(_gos.Count - 1);
             RedrawImages();
             return popped;
         }
@@ -43,8 +44,9 @@ public class Inventory : MonoBehaviour
 
     public GameObject PushPop(GameObject go)
     {
-        var popped = _gos.Dequeue();
-        _gos.Enqueue(go);
+        var popped = _gos.Last<GameObject>();
+        _gos.RemoveAt(_gos.Count - 1);
+        _gos.Add(go);
         
         RedrawImages();
         return popped;
@@ -74,5 +76,11 @@ public class Inventory : MonoBehaviour
             index++;
         }
         ator.Dispose();
+    }
+
+    public GameObject TakeIndex(int index, GameObject go)
+    {
+        // TO-FUCKING-DO: do things
+        return null;
     }
 }
