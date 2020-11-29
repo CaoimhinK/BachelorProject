@@ -112,7 +112,7 @@ static class TypeFunctions
                break;
        } 
        
-       var fontSize = 55; //Mathf.RoundToInt((numTypeb) ? Mathf.Min((2f / strBody.Length) * 200f, 200f) : Mathf.Min((7f / strBody.Length) * 80f,80f));
+       var fontSize = (numTypeb) ? 55 : 100;
 
        return new FuncIO(vec, value, strHead, strBody, fontSize);
    }

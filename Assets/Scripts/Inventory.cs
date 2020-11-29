@@ -11,76 +11,67 @@ public class Inventory : MonoBehaviour
 {
     public RawImage[] textures;
     public RawImage[] bgs;
+    private readonly int _capacity = 3;
 
     private List<GameObject> _gos;
 
     private void Start()
     {
-        _gos = new List<GameObject>();
+        _gos = Enumerable.Repeat<GameObject>(null, _capacity).ToList();
     }
 
-    public bool PushGo(GameObject go)
+    public GameObject Pop()
     {
-        if (_gos.Count > 2)
+        for (var i = 0; i < _capacity; i++)
         {
-            return false;
-        }
-        _gos.Add(go);
-        RedrawImages();
-        return true;
-    }
-
-    public GameObject PopGo()
-    {
-        if (_gos.Count > 0)
-        {
-            var popped = _gos.Last<GameObject>();
-            _gos.RemoveAt(_gos.Count - 1);
-            RedrawImages();
-            return popped;
+            if (_gos[i])
+            {
+                var temp = _gos[i];
+                _gos[i] = null;
+                RedrawImages();
+                return temp;
+            }
         }
         return null;
-    }
-
-    public GameObject PushPop(GameObject go)
-    {
-        var popped = _gos.Last<GameObject>();
-        _gos.RemoveAt(_gos.Count - 1);
-        _gos.Add(go);
-        
-        RedrawImages();
-        return popped;
-    }
-
-    public bool HasItem()
-    {
-        return _gos.Count > 0;
     }
 
     private void RedrawImages()
     {
-        var ator = _gos.GetEnumerator();
-        var index = 0;
-
-        while (index < 3 - _gos.Count)
+        for (var index = 0; index < _capacity; index++)
         {
-            textures[index].texture = null;
-            bgs[index].color = Color.white;
-            index++;
+            var go = _gos[index];
+            if (go)
+            {
+                var tex = _gos.ElementAt(index).GetComponent<TextTexture>();
+                textures[index].texture = TextRenderer.Instance.RenderText(tex.text, tex.fontSize);
+                bgs[index].color = ColorPalette.Colors[go.GetComponent<MathObj>().Type];
+            }
+            else
+            {
+                textures[index].texture = null;
+                bgs[index].color = Color.white;
+            }
         }
-        while (ator.MoveNext() && ator.Current)
-        {
-            var tex = ator.Current.GetComponent<TextTexture>();
-            textures[index].texture = TextRenderer.Instance.RenderText(tex.text, tex.fontSize);
-            bgs[index].color = ColorPalette.Colors[ator.Current.GetComponent<MathObj>().Type];
-            index++;
-        }
-        ator.Dispose();
     }
 
-    public GameObject TakeIndex(int index, GameObject go)
+    public bool Push(GameObject go)
     {
-        // TO-FUCKING-DO: do things
-        return null;
+        for (var i = 0; i < _capacity; i++)
+        {
+            if (!_gos[i]) {
+                _gos[i] = go;
+                RedrawImages();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public GameObject StoreIndex(int index, GameObject go)
+    {
+        var temp = _gos[index];
+        _gos[index] = go;
+        RedrawImages();
+        return temp;
     }
 }

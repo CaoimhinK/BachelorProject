@@ -233,13 +233,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textures:
-  - {fileID: 2374692326312623561}
-  - {fileID: 2374692325173622486}
   - {fileID: 2374692326153113879}
+  - {fileID: 2374692325173622486}
+  - {fileID: 2374692326312623561}
   bgs:
-  - {fileID: 2374692326448689061}
-  - {fileID: 2374692325150365204}
   - {fileID: 2374692326338084526}
+  - {fileID: 2374692325150365204}
+  - {fileID: 2374692326448689061}
 --- !u!1 &2374692326042811414
 GameObject:
   m_ObjectHideFlags: 0

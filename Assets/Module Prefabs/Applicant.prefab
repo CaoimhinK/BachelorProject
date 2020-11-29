@@ -437,6 +437,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3025141667469611014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545435399425218513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d046d15935a1014d0ac87caa875efeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Apply
+  fontSize: 80
 --- !u!1 &4247077066870979973
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,11 +545,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
---- !u!4 &5799336352701441785 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
-  m_PrefabInstance: {fileID: 2240082017650785103}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4425943346641556265 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -6739000516425914266, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
@@ -547,6 +556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c92d5084a1018fab469f3a238f3982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &5799336352701441785 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
+  m_PrefabInstance: {fileID: 2240082017650785103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2240082018467905320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,6 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8413b518331e3ea4983ca340b85bd5d4, type: 3}
+--- !u!1 &3545435399425218513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 448209797314696688, guid: 8413b518331e3ea4983ca340b85bd5d4, type: 3}
+  m_PrefabInstance: {fileID: 3966464942321631777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8868852957322454552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5485322906823009337, guid: 8413b518331e3ea4983ca340b85bd5d4, type: 3}

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class TextTexture : MonoBehaviour
 {
-    [HideInInspector]
     public string text;
-    [HideInInspector]
     public int fontSize;
     
     private MeshRenderer _ren;
