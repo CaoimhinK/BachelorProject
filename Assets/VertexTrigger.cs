@@ -11,4 +11,9 @@ public class VertexTrigger : MonoBehaviour
     {
         app.VertexTriggered(index);
     }
+
+    void OnTriggerExit(Collider coll)
+    {
+        app.VertexLeft(index);
+    }
 }

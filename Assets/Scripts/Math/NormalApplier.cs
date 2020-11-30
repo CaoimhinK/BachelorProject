@@ -48,10 +48,11 @@ public class NormalApplier : MonoBehaviour
         _endRot = Quaternion.LookRotation(endRot);
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log(napp.CorrectDir().normalized);
-        Debug.Log(rec.GetVector().normalized);
+        Debug.Log(napp.CorrectDir());
+        Debug.Log(rec.GetVector());
 
-        if (napp.CorrectDir().normalized.Equals(rec.GetVector().normalized)) {
+
+        if (Vector3.Distance(napp.CorrectDir(), rec.GetVector()) < 0.01f) {
             napp.isCorrect = true;
         }
         _animating = false;

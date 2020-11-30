@@ -1,21 +1,29 @@
 ﻿using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-public class GrabController : MonoBehaviour
+public class InputHandler : MonoBehaviour
 {
     public Transform grabPos;
     public Inventory inventory;
+    public float speed = 10f;
+    public bool lockInput;
+    public Transform cam;
 
+    private CharacterController _controller;
     private GameObject _currentGo = null;
     private Anim anim;
 
     void Start()
     {
+        _controller = GetComponent<CharacterController>();
         anim = GetComponent<Anim>();
+        HandleMove();
     }
 
     void Update()
     {
+        if (lockInput) return;
+        HandleMove();
         if (Input.GetButtonDown("Grab"))
         {
             if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo))
@@ -133,5 +141,22 @@ public class GrabController : MonoBehaviour
                 if (_currentGo) _currentGo.SetActive(true);
             }
         }
+    }
+
+    void HandleMove()
+    {
+        var h = Input.GetAxis("Horizontal");
+        var v = Input.GetAxis("Vertical");
+
+        var trans = transform;
+
+        var direction = new Vector3(h, 0, v);
+
+        _controller.Move(speed * Time.deltaTime * (direction.normalized));
+        transform.position = new Vector3(transform.position.x, 1.2f, transform.position.z);
+        
+        var transPos = trans.position;
+        
+        cam.transform.position = transPos;
     }
 }

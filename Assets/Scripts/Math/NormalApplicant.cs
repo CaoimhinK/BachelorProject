@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
 
 public class NormalApplicant : MonoBehaviour
 {
@@ -13,11 +14,14 @@ public class NormalApplicant : MonoBehaviour
     public Spawner[] vertices;
     public bool isCorrect;
     public GameObject vertexIndicator;
+
+    private int activeVertexCount;
     
     private void Awake() {
         goalObj.SetParent(origin);
         pivot.SetParent(origin);
         vertexIndicator.transform.SetParent(origin);
+        vertexIndicator.SetActive(false);
         UpdateTarget();
     }
 
@@ -35,17 +39,20 @@ public class NormalApplicant : MonoBehaviour
 
     public void VertexTriggered(int index)
     {
+        activeVertexCount++;
         vertexIndicator.SetActive(true);
         vertexIndicator.transform.localPosition = vertices[index].spawnVecValue;
     }
-    public void VertexLeft()
+    public void VertexLeft(int index)
     {
-        vertexIndicator.SetActive(false);
+        activeVertexCount--;
+        if (activeVertexCount == 0) 
+            vertexIndicator.SetActive(false);
     }
 
     public Vector3 CorrectDir()
     {
-        return tip.localPosition;
+        return Vector3.Normalize(target.position - tip.position);
     }
 
     public Quaternion GetLocalRot() {

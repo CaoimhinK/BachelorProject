@@ -12,6 +12,7 @@ public enum FuncType
     Invert,
     Combine,
     Negative,
+    Normalize,
 }
 
 public enum ObjType
@@ -60,6 +61,11 @@ static class TypeFunctions
        
        switch (type)
        {
+           case FuncType.Normalize:
+               vec = vec1.GetVector().normalized;
+               strHead = StrHead("Norm");
+               strBody = StrBody(vec);
+               break;
            case FuncType.Add:
                vec = vec1.GetVector() + vec2.GetVector();
                strHead = StrHead("+");
