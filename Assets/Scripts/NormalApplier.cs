@@ -12,6 +12,7 @@ public class NormalApplier : MonoBehaviour
     private float _startTime;
     private Quaternion _startRot;
     private Quaternion _endRot;
+    private bool _isCorrect;
 
     private void Update()
     {
@@ -46,7 +47,13 @@ public class NormalApplier : MonoBehaviour
         _startRot = napp.GetLocalRot();
         _endRot = Quaternion.LookRotation(endRot);
         yield return new WaitForSeconds(0.5f);
-        napp.SetLocalRot(_endRot);
+
+        Debug.Log(napp.CorrectDir().normalized);
+        Debug.Log(rec.GetVector().normalized);
+
+        if (napp.CorrectDir().normalized.Equals(rec.GetVector().normalized)) {
+            napp.isCorrect = true;
+        }
         _animating = false;
     }
 }

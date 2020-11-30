@@ -9,7 +9,9 @@ public class NormalApplicant : MonoBehaviour
     public Transform goalObj;
     public Transform target;
     public Transform origin;
+    public Transform tip;
     public Spawner[] vertices;
+    public bool isCorrect;
     
     private void Awake() {
         goalObj.SetParent(origin);
@@ -27,6 +29,11 @@ public class NormalApplicant : MonoBehaviour
 
     public void SetLocalRot(Quaternion quat) {
         pivot.localRotation = quat;
+    }
+
+    public Vector3 CorrectDir()
+    {
+        return tip.localPosition;
     }
 
     public Quaternion GetLocalRot() {

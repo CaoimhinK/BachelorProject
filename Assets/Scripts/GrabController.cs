@@ -48,8 +48,7 @@ public class GrabController : MonoBehaviour
                             else
                             {
                                 anim.GiveRec(_currentGo, hitGo.transform, rec);
-                                _currentGo = inventory.Pop();
-                                if (_currentGo) _currentGo.SetActive(true);
+                                _currentGo = null;
                             }
                         }
                         else
@@ -85,67 +84,46 @@ public class GrabController : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetButtonDown("Inventory 1"))
+        else
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo)) {
-                var hitGo = hitInfo.collider.gameObject;
-                if (hitInfo.collider.gameObject.TryGetComponent<DelButton>(out var but) && but.bin)
+            for (var i = 0; i < 3; i++)
+            {
+                if (Input.GetButtonDown("Inventory " + i))
                 {
-                    var temp = inventory.StoreIndex(0, null);
-                    if (temp)
-                    {
-                        temp.SetActive(true);
-                        anim.Del(temp, hitGo);
-                    }
-                }
-                else
-                {
-                    if (_currentGo) _currentGo.SetActive(false);
-                    _currentGo = inventory.StoreIndex(0, _currentGo);
-                    if (_currentGo) _currentGo.SetActive(true);
+                    HandleInventorySlot(i);
+                    break;
                 }
             }
         }
-        else if (Input.GetButtonDown("Inventory 2"))
-        {
-            if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo)) {
-                var hitGo = hitInfo.collider.gameObject;
-                if (hitGo.TryGetComponent<DelButton>(out var but) && but.bin)
+    }
+
+    private void HandleInventorySlot(int index)
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo)) {
+            var hitGo = hitInfo.collider.gameObject;
+            if (hitGo.TryGetComponent<DelButton>(out var but) && but.bin)
+            {
+                var temp = inventory.StoreIndex(index, null);
+                if (temp)
                 {
-                    var temp = inventory.StoreIndex(1, null);
-                    if (temp)
-                    {
-                        temp.SetActive(true);
-                        anim.Del(temp, hitGo);
-                    }
-                }
-                else
-                {
-                    if (_currentGo) _currentGo.SetActive(false);
-                    _currentGo = inventory.StoreIndex(1, _currentGo);
-                    if (_currentGo) _currentGo.SetActive(true);
+                    temp.SetActive(true);
+                    anim.Del(temp, hitGo);
                 }
             }
-        }
-        else if (Input.GetButtonDown("Inventory 3"))
-        {
-            if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo)) {
-                var hitGo = hitInfo.collider.gameObject;
-                if (hitGo.TryGetComponent<DelButton>(out var but) && but.bin)
+            else if (hitGo.TryGetComponent<Recepticle>(out var rec))
+            {
+                var temp = inventory.StoreIndex(index, null);
+                if (temp)
                 {
-                    var temp = inventory.StoreIndex(2, null);
-                    if (temp)
-                    {
-                        temp.SetActive(true);
-                        anim.Del(temp, hitGo);
-                    }
+                    temp.SetActive(true);
+                    anim.GiveRec(temp, hitGo.transform, rec);
                 }
-                else
-                {
-                    if (_currentGo) _currentGo.SetActive(false);
-                    _currentGo = inventory.StoreIndex(2, _currentGo);
-                    if (_currentGo) _currentGo.SetActive(true);
-                }
+            }
+            else
+            {
+                if (_currentGo) _currentGo.SetActive(false);
+                _currentGo = inventory.StoreIndex(index, _currentGo);
+                if (_currentGo) _currentGo.SetActive(true);
             }
         }
     }
