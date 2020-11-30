@@ -44,6 +44,10 @@ public class GrabController : MonoBehaviour
                                     _currentGo.SetActive(false);
                                     _currentGo = anim.TakeRec(rec);
                                 }
+                                else
+                                {
+                                    anim.Warn(hitGo);
+                                }
                             }
                             else
                             {
@@ -74,8 +78,6 @@ public class GrabController : MonoBehaviour
                     if (but.bin)
                     {
                         if(_currentGo) anim.Del(_currentGo, hitGo);
-                        _currentGo = inventory.Pop();
-                        if (_currentGo) _currentGo.SetActive(true);
                     }
                     else
                     {
@@ -113,10 +115,15 @@ public class GrabController : MonoBehaviour
             else if (hitGo.TryGetComponent<Recepticle>(out var rec))
             {
                 var temp = inventory.StoreIndex(index, null);
-                if (temp)
+                if (temp && !rec.HasObject())
                 {
                     temp.SetActive(true);
                     anim.GiveRec(temp, hitGo.transform, rec);
+                }
+                else if (temp)
+                {
+                    inventory.StoreIndex(index, temp);
+                    anim.Warn(hitGo);
                 }
             }
             else
