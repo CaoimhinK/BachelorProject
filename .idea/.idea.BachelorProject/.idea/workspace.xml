@@ -23,10 +23,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MessageManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MessageManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/Recepticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Module Prefabs/Recepticle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/VecFuncs/Cross Function.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Module Prefabs/VecFuncs/Cross Function.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Anim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Anim.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VertexTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VertexTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +44,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/dd/dd7cfd8e/Matrix4x4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/f5/56e69684/Vector4.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MatCol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/92/f503a34e/Material.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/3c/92c392cc/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -93,6 +98,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NormalApplier.cs" />
+        <option value="$PROJECT_DIR$/Assets/MessageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Anim.cs" />
       </list>
     </option>
   </component>
@@ -160,6 +171,7 @@
       <workItem from="1606300177463" duration="14438000" />
       <workItem from="1606318289640" duration="13820000" />
       <workItem from="1606409757316" duration="4067000" />
+      <workItem from="1606814949420" duration="25216000" />
     </task>
     <servers />
   </component>
@@ -204,10 +216,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="765" y="361" key="save.file.as.template.dialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1604421335923" />
-    <state x="2530" y="238" width="672" height="678" key="search.everywhere.popup" timestamp="1605109463959">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606836524897">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="2530" y="238" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605109463959" />
-    <state x="659" y="259" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1604328988629" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606836524897" />
   </component>
 </project>

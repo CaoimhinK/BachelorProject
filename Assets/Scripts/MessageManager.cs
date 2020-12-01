@@ -5,26 +5,25 @@ using UnityEngine.UI;
 
 public class MessageManager : MonoBehaviour
 {
-    public Dictionary<string, Text> messages;
-
     public string[] keys;
     public Text[] mTexts;
 
+    private Dictionary<string, Text> _messages;
     private Text _currentMessage;
 
     void Start()
     {
-        messages = new Dictionary<string, Text>();
+        _messages = new Dictionary<string, Text>();
         for (var i = 0; i < keys.Length; i++)
         {
-            messages.Add(keys[i], mTexts[i]);
+            _messages.Add(keys[i], mTexts[i]);
         }
     }
 
-    public void ShowMessage(string name)
+    public void ShowMessage(string messageName)
     {
         if (_currentMessage) _currentMessage.gameObject.SetActive(false);
-        var message = messages[name];
+        var message = _messages[messageName];
         message.gameObject.SetActive(true);
         gameObject.SetActive(true);
         _currentMessage = message;

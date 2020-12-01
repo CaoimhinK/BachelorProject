@@ -7,23 +7,32 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="GameManager.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Anim.cs" t="Include" />
           <e p="ColorPalette.cs" t="Include" />
-          <e p="Function.cs" t="Include" />
-          <e p="GrabController.cs" t="Include" />
+          <e p="DelButton.cs" t="Include" />
+          <e p="Door.cs" t="Include" />
+          <e p="FieldGenerator.cs" t="Include" />
+          <e p="InputHandler.cs" t="Include" />
           <e p="Inventory.cs" t="Include" />
-          <e p="MatCol.cs" t="Include" />
-          <e p="MathObj.cs" t="Include" />
-          <e p="MatrixApplier.cs" t="Include" />
-          <e p="MatrixContainer.cs" t="Include" />
-          <e p="MoveScript.cs" t="Include" />
-          <e p="NormalApplier.cs" t="Include" />
+          <e p="Math" t="Include">
+            <e p="Function.cs" t="Include" />
+            <e p="MatCol.cs" t="Include" />
+            <e p="MathObj.cs" t="Include" />
+            <e p="MatrixApplier.cs" t="Include" />
+            <e p="MatrixContainer.cs" t="Include" />
+            <e p="NormalApplicant.cs" t="Include" />
+            <e p="NormalApplier.cs" t="Include" />
+            <e p="TypeEnum.cs" t="Include" />
+            <e p="VectorContainer.cs" t="Include" />
+          </e>
+          <e p="MessageManager.cs" t="Include" />
           <e p="Recepticle.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
           <e p="TextRenderer.cs" t="Include" />
           <e p="TextTexture.cs" t="Include" />
-          <e p="TypeEnum.cs" t="Include" />
-          <e p="VectorContainer.cs" t="Include" />
+          <e p="VertexTrigger.cs" t="Include" />
         </e>
       </e>
       <e p="BachelorProject.sln" t="IncludeFlat" />

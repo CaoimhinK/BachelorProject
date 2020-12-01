@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
 public class InputHandler : MonoBehaviour
@@ -8,15 +10,20 @@ public class InputHandler : MonoBehaviour
     public float speed = 10f;
     public bool lockInput;
     public Transform cam;
-
+    
+    private const int NumInventorySlots = 3;
     private CharacterController _controller;
     private GameObject _currentGo = null;
-    private Anim anim;
-
+    private Anim _anim;
+    private Camera _cam;
+    private GameObject _currentWall;
+    private Material _currentMat;
+    
     void Start()
     {
+        _cam = Camera.main;
         _controller = GetComponent<CharacterController>();
-        anim = GetComponent<Anim>();
+        _anim = GetComponent<Anim>();
         HandleMove();
     }
 
@@ -29,17 +36,17 @@ public class InputHandler : MonoBehaviour
             if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo))
             {
                 var hitGo = hitInfo.collider.gameObject;
-                if (hitGo.TryGetComponent<Spawner>(out var spawner))
+                if (HitGoTypeIs<Spawner>(hitGo, out var spawner))
                 {
                     if (!_currentGo) {
-                        _currentGo = anim.Spawn(spawner);
+                        _currentGo = _anim.Spawn(spawner);
                     }
                     else if (inventory.Push(_currentGo)) {
                         _currentGo.SetActive(false);
-                        _currentGo = anim.Spawn(spawner);
+                        _currentGo = _anim.Spawn(spawner);
                     }
                 }
-                else if (hitGo.TryGetComponent<Recepticle>(out var rec))
+                else if (HitGoTypeIs<Recepticle>(hitGo, out var rec))
                 {
                     if (_currentGo)
                     {
@@ -50,42 +57,42 @@ public class InputHandler : MonoBehaviour
                                 if (inventory.Push(_currentGo))
                                 {
                                     _currentGo.SetActive(false);
-                                    _currentGo = anim.TakeRec(rec);
+                                    _currentGo = _anim.TakeRec(rec);
                                 }
                                 else
                                 {
-                                    anim.Warn(hitGo);
+                                    _anim.Warn(hitGo);
                                 }
                             }
                             else
                             {
-                                anim.GiveRec(_currentGo, hitGo.transform, rec);
+                                _anim.GiveRec(_currentGo, hitGo.transform, rec);
                                 _currentGo = null;
                             }
                         }
                         else
                         {
-                            anim.Warn(hitGo);
+                            _anim.Warn(hitGo);
                         }
                     }
                     else if (rec.HasObject())
                     {
-                        _currentGo = anim.TakeRec(rec);
+                        _currentGo = _anim.TakeRec(rec);
                     }
                 }
-                else if (hitGo.TryGetComponent<MatrixApplier>(out var mapp))
+                else if (HitGoTypeIs<MatrixApplier>(hitGo, out var mapp))
                 {
                     mapp.ApplyMatrix();
                 }
-                else if (hitGo.TryGetComponent<NormalApplier>(out var napp))
+                else if (HitGoTypeIs<NormalApplier>(hitGo, out var napp))
                 {
                     napp.ApplyNormal();
                 }
-                else if (hitGo.TryGetComponent<DelButton>(out var but))
+                else if (HitGoTypeIs<DelButton>(hitGo, out var but))
                 {
                     if (but.bin)
                     {
-                        if(_currentGo) anim.Del(_currentGo, hitGo);
+                        if(_currentGo) _anim.Del(_currentGo, hitGo);
                     }
                     else
                     {
@@ -96,12 +103,11 @@ public class InputHandler : MonoBehaviour
         }
         else
         {
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < NumInventorySlots; i++)
             {
-                if (Input.GetButtonDown("Inventory " + i))
+                if (Input.GetButtonDown($"Inventory {i}"))
                 {
                     HandleInventorySlot(i);
-                    break;
                 }
             }
         }
@@ -111,27 +117,27 @@ public class InputHandler : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo)) {
             var hitGo = hitInfo.collider.gameObject;
-            if (hitGo.TryGetComponent<DelButton>(out var but) && but.bin)
+            if (HitGoTypeIs<DelButton>(hitGo, out var but) && but.bin)
             {
                 var temp = inventory.StoreIndex(index, null);
                 if (temp)
                 {
                     temp.SetActive(true);
-                    anim.Del(temp, hitGo);
+                    _anim.Del(temp, hitGo);
                 }
             }
-            else if (hitGo.TryGetComponent<Recepticle>(out var rec))
+            else if (HitGoTypeIs<Recepticle>(hitGo, out var rec))
             {
                 var temp = inventory.StoreIndex(index, null);
-                if (temp && !rec.HasObject())
+                if (temp && !rec.HasObject() && temp.GetComponent<MathObj>().Type == rec.type)
                 {
                     temp.SetActive(true);
-                    anim.GiveRec(temp, hitGo.transform, rec);
+                    _anim.GiveRec(temp, hitGo.transform, rec);
                 }
                 else if (temp)
                 {
                     inventory.StoreIndex(index, temp);
-                    anim.Warn(hitGo);
+                    _anim.Warn(hitGo);
                 }
             }
             else
@@ -141,6 +147,11 @@ public class InputHandler : MonoBehaviour
                 if (_currentGo) _currentGo.SetActive(true);
             }
         }
+    }
+
+    bool HitGoTypeIs<T>(GameObject hitGo, out T obj)
+    {
+        return hitGo.TryGetComponent(out obj);
     }
 
     void HandleMove()
@@ -153,10 +164,35 @@ public class InputHandler : MonoBehaviour
         var direction = new Vector3(h, 0, v);
 
         _controller.Move(speed * Time.deltaTime * (direction.normalized));
-        transform.position = new Vector3(transform.position.x, 1.2f, transform.position.z);
+        var pos = transform.position;
+        var newPos = new Vector3(pos.x, 1.4f, pos.z);
         
+        trans.position = newPos;
         var transPos = trans.position;
         
         cam.transform.position = transPos;
+
+        Physics.Raycast(_cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out var hitInfo);
+        var potentialWall = (hitInfo.collider) ? hitInfo.collider.gameObject : null;
+        bool isWall = potentialWall && potentialWall.CompareTag("Wall");
+        if (!_currentWall && isWall)
+        {
+            _currentWall = potentialWall;
+            _currentMat = potentialWall.GetComponent<MeshRenderer>().material;
+            _anim.Fade(_currentMat, 0.3f);
+        }
+        else if (_currentWall && !isWall)
+        {
+            _anim.Fade(_currentMat, 1f);
+            _currentWall = null;
+        }
+        else if (isWall && _currentWall != potentialWall)
+        {
+            var oldMat = _currentMat;
+            _anim.Fade(oldMat, 1f);
+            _currentWall = potentialWall;
+            _currentMat = potentialWall.GetComponent<MeshRenderer>().material;
+            _anim.Fade(_currentMat, 0.3f);
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Grabbable
   - Spawner
   - Receiver
+  - Wall
   layers:
   - Default
   - TransparentFX

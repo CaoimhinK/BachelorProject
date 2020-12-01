@@ -7,25 +7,29 @@ public class GameManager : MonoBehaviour
     public InputHandler input;
     public MessageManager mm;
 
-    private Chapter chapter;
+    private Chapter _chapter;
 
     void Start()
     {
+        _chapter = Chapter.PreStart;
         input.lockInput = true;
-        mm.ShowMessage("Start");
-        chapter = Chapter.Start;
     }
 
     void Update()
     {
-        switch (chapter)
+        switch (_chapter)
         {
+            case Chapter.PreStart:
+                if (!mm) break;
+                mm.ShowMessage("Start");
+                _chapter = Chapter.Start;
+                break;
             case Chapter.Start:
                 if (Input.GetButtonDown("Grab"))
                 {
                     input.lockInput = false;
                     mm.HideMessage();
-                    chapter = Chapter.Level1;
+                    _chapter = Chapter.Level1;
                 }
                 break;
             case Chapter.Level1:
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
 
 enum Chapter
 {
+    PreStart,
     Start,
     Level1,
 }
