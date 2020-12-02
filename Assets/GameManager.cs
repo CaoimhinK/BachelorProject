@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public InputHandler input;
     public MessageManager mm;
+    public GameObject[] rooms;
+    public Door door;
 
     private Chapter _chapter;
 
@@ -13,6 +15,10 @@ public class GameManager : MonoBehaviour
     {
         _chapter = Chapter.PreStart;
         input.lockInput = true;
+        foreach (var room in rooms)
+        {
+            room.SetActive(false);
+        }
     }
 
     void Update()
@@ -23,6 +29,7 @@ public class GameManager : MonoBehaviour
                 if (!mm) break;
                 mm.ShowMessage("Start");
                 _chapter = Chapter.Start;
+                rooms[0].SetActive(true);
                 break;
             case Chapter.Start:
                 if (Input.GetButtonDown("Grab"))
@@ -33,6 +40,13 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case Chapter.Level1:
+                if (!door.isClosed)
+                {
+                    rooms[1].SetActive(true);
+                    _chapter = Chapter.Level2;
+                }
+                break;
+            case Chapter.Level2:
                 break;
         }
     }
@@ -43,4 +57,5 @@ enum Chapter
     PreStart,
     Start,
     Level1,
+    Level2,
 }

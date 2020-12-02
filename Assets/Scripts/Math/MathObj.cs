@@ -27,4 +27,6 @@ public class MathObj : MonoBehaviour
     {
         //if (_type == ObjType.Matrix) MatrixContainer.DecMatrix();
     }
+    
+    
 }

@@ -20,20 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MessageManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MessageManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/Recepticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Module Prefabs/Recepticle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/WallMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/WallMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/Applicant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/Applicant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/Field Generator.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/Field Generator.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Other Prefabs/MathObj.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Other Prefabs/MathObj.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Anim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Anim.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VertexTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VertexTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/NormalApplicant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/NormalApplicant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wall.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +52,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FollowCamScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/GridScript.cs" />
-        <option value="$USER_HOME$/.ideavimrc" />
         <option value="$PROJECT_DIR$/Assets/IndicatorScript.cs" />
         <option value="$PROJECT_DIR$/Assets/GrabScript.cs" />
         <option value="$PROJECT_DIR$/Assets/MoveScript.cs" />
@@ -99,11 +95,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NormalApplier.cs" />
         <option value="$PROJECT_DIR$/Assets/MessageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Math/NormalApplicant.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Anim.cs" />
+        <option value="$PROJECT_DIR$/Assets/Materials/FadeOutShader.shader" />
       </list>
     </option>
   </component>
@@ -172,6 +171,7 @@
       <workItem from="1606318289640" duration="13820000" />
       <workItem from="1606409757316" duration="4067000" />
       <workItem from="1606814949420" duration="25216000" />
+      <workItem from="1606909484918" duration="6845000" />
     </task>
     <servers />
   </component>

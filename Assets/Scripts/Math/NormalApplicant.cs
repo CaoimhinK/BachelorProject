@@ -15,7 +15,7 @@ public class NormalApplicant : MonoBehaviour
     public bool isCorrect;
     public GameObject vertexIndicator;
 
-    private int activeVertexCount;
+    private int _activeVertexCount;
     
     private void Awake() {
         goalObj.SetParent(origin);
@@ -25,12 +25,15 @@ public class NormalApplicant : MonoBehaviour
         UpdateTarget();
     }
 
-    public void UpdateTarget() {
+    private void UpdateTarget() {
         goalObj.LookAt(target);
-        vertices[0].spawnVecValue = goalObj.localPosition + goalObj.up - goalObj.right;
-        vertices[1].spawnVecValue = goalObj.localPosition + goalObj.up + goalObj.right;
-        vertices[2].spawnVecValue = goalObj.localPosition - goalObj.up + goalObj.right;
-        vertices[3].spawnVecValue = goalObj.localPosition - goalObj.up - goalObj.right;
+        var pos = goalObj.localPosition;
+        var up = goalObj.up;
+        var right = goalObj.right;
+        vertices[0].spawnVecValue = pos + up - right;
+        vertices[1].spawnVecValue = pos + up + right;
+        vertices[2].spawnVecValue = pos - up + right;
+        vertices[3].spawnVecValue = pos - up - right;
     }
 
     public void SetLocalRot(Quaternion quat) {
@@ -39,15 +42,17 @@ public class NormalApplicant : MonoBehaviour
 
     public void VertexTriggered(int index)
     {
-        activeVertexCount++;
+        _activeVertexCount++;
         vertexIndicator.SetActive(true);
         vertexIndicator.transform.localPosition = vertices[index].spawnVecValue;
     }
     public void VertexLeft(int index)
     {
-        activeVertexCount--;
-        if (activeVertexCount == 0) 
+        _activeVertexCount--;
+        if (_activeVertexCount == 0)
+        {
             vertexIndicator.SetActive(false);
+        }
     }
 
     public Vector3 CorrectDir()

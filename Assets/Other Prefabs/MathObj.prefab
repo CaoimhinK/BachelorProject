@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d046d15935a1014d0ac87caa875efeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texGo: {fileID: 0}
   text: 8
   fontSize: 200
 --- !u!114 &-951287567366113865
@@ -110,7 +109,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9ade3228f26aebd97adcdd67557982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   value: 0
   vecValue: {x: 0, y: 0, z: 0}
-  texRen: {fileID: 6879886281561966416, guid: 183699f7ff2852cd4872b733af8cc9be, type: 3}
+  matValue:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  tmp: {fileID: 0}
