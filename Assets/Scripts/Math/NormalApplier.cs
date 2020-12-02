@@ -7,12 +7,20 @@ public class NormalApplier : MonoBehaviour
 {
     public NormalApplicant napp;
     public Recepticle rec;
+    public bool isCorrect;
 
     private bool _animating;
     private float _startTime;
     private Quaternion _startRot;
     private Quaternion _endRot;
-    private bool _isCorrect;
+
+    private Material mat;
+    
+
+    private void Start()
+    {
+        mat = GetComponent<MeshRenderer>().material;
+    }
 
     private void Update()
     {
@@ -26,10 +34,17 @@ public class NormalApplier : MonoBehaviour
     {
         if (!_animating)
         {
-            var vec = rec.GetVector();
-            
-            if (!vec.Equals(Vector3.zero)) {
-                StartCoroutine(nameof(RotGo), vec);
+            if (isCorrect)
+            {
+                StartCoroutine(nameof(AlreadyCorrect));
+            }
+            else
+            {
+                var vec = rec.GetVector();
+                
+                if (!vec.Equals(Vector3.zero)) {
+                    StartCoroutine(nameof(RotGo), vec);
+                }
             }
         }
     }
@@ -46,15 +61,21 @@ public class NormalApplier : MonoBehaviour
         _startTime = Time.time;
         _startRot = napp.GetLocalRot();
         _endRot = Quaternion.LookRotation(endRot);
+
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log(napp.CorrectDir());
-        Debug.Log(rec.GetVector());
-
-
         if (Vector3.Distance(napp.CorrectDir(), rec.GetVector()) < 0.01f) {
-            napp.isCorrect = true;
+            isCorrect = true;
         }
         _animating = false;
+    }
+
+    IEnumerator AlreadyCorrect()
+    {
+        var col = mat.color;
+        if (col == Color.green) yield break;
+        mat.color = Color.green;
+        yield return new WaitForSeconds(0.2f);
+        mat.color = col;
     }
 }

@@ -13,8 +13,11 @@ public class FieldGenerator : MonoBehaviour
 
     public Material textureMat;
 
+    public bool isSolved;
+
     void Update()
     {
+        if (isSolved) return;
         var isCorrect = true;
         foreach (var app in apps)
         {
@@ -42,6 +45,7 @@ public class FieldGenerator : MonoBehaviour
             mesh.Optimize();
             mesh.RecalculateNormals();
             StartCoroutine(nameof(Animate));
+            isSolved = true;
         }
     }
 
@@ -57,5 +61,10 @@ public class FieldGenerator : MonoBehaviour
             textureMat.color = Color.Lerp(new Color(1,1,1,0), Color.white, elapsedTime / 2f);
             yield return null;
         }
+    }
+
+    public bool CheckSolved()
+    {
+        return isSolved;
     }
 }

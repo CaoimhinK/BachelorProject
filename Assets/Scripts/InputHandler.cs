@@ -31,6 +31,7 @@ public class InputHandler : MonoBehaviour
     {
         if (lockInput) return;
         HandleMove();
+        CheckWalls();
         if (Input.GetButtonDown("Grab"))
         {
             if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo))
@@ -88,16 +89,20 @@ public class InputHandler : MonoBehaviour
                 {
                     napp.ApplyNormal();
                 }
-                else if (HitGoTypeIs<DelButton>(hitGo, out var but))
+                else if (HitGoTypeIs<DelButton>(hitGo, out var delBut))
                 {
-                    if (but.bin)
+                    if (delBut.bin)
                     {
                         if(_currentGo) _anim.Del(_currentGo, hitGo);
                     }
                     else
                     {
-                        but.PushButton();
+                        delBut.PushButton();
                     }
+                }
+                else if (HitGoTypeIs<Noidel.Button>(hitGo, out var but))
+                {
+                    but.PushButton();
                 }
             }
         }
@@ -149,12 +154,12 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    bool HitGoTypeIs<T>(GameObject hitGo, out T obj)
+    private bool HitGoTypeIs<T>(GameObject hitGo, out T obj)
     {
         return hitGo.TryGetComponent(out obj);
     }
 
-    void HandleMove()
+    private void HandleMove()
     {
         var h = Input.GetAxis("Horizontal");
         var v = Input.GetAxis("Vertical");
@@ -171,7 +176,10 @@ public class InputHandler : MonoBehaviour
         var transPos = trans.position;
         
         cam.transform.position = transPos;
+    }
 
+    private void CheckWalls()
+    {
         Physics.Raycast(_cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out var hitInfo);
         var potentialWall = (hitInfo.collider) ? hitInfo.collider.gameObject : null;
         bool isWall = potentialWall && potentialWall.CompareTag("Wall");
