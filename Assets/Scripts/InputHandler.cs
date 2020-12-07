@@ -10,6 +10,9 @@ public class InputHandler : MonoBehaviour
     public float speed = 10f;
     public bool lockInput;
     public Transform cam;
+    public MessageManager mm;
+
+    public string currentMessageName = "Start";
     
     private const int NumInventorySlots = 3;
     private CharacterController _controller;
@@ -18,6 +21,7 @@ public class InputHandler : MonoBehaviour
     private Camera _cam;
     private GameObject _currentWall;
     private Material _currentMat;
+    private bool _messageShowing;
     
     void Start()
     {
@@ -104,6 +108,24 @@ public class InputHandler : MonoBehaviour
                 {
                     but.PushButton();
                 }
+                else if (_messageShowing)
+                {
+                    mm.HideMessage();
+                    _messageShowing = false;
+                }
+            }
+        }
+        else if (Input.GetButtonDown("ShowMessage"))
+        {
+            if (_messageShowing)
+            {
+                mm.HideMessage();
+                _messageShowing = false;
+            }
+            else
+            {
+                mm.ShowMessage(currentMessageName);
+                _messageShowing = true;
             }
         }
         else
@@ -202,5 +224,11 @@ public class InputHandler : MonoBehaviour
             _currentMat = potentialWall.GetComponent<MeshRenderer>().material;
             _anim.Fade(_currentMat, 0.3f);
         }
+    }
+
+    public void TriggerEnterMessage()
+    {
+        mm.ShowMessage(currentMessageName);
+        _messageShowing = true;
     }
 }
