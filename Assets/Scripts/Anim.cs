@@ -34,6 +34,21 @@ public class Anim : MonoBehaviour
         ));
         return currentGo;
     }
+    
+    public void TakeRecToInventory(Recepticle rec, Inventory inv, int index)
+    {
+        var currentGo = rec.TakeObject();
+        StartCoroutine(nameof(AnimFromTo), new Holder(
+            currentGo.transform,
+            grabPos.transform,
+            (hold) =>
+            {
+                currentGo.transform.position = grabPos.position;
+                inv.SetIndex(index, currentGo);
+                currentGo.SetActive(false);
+            }
+        ));
+    }
 
     public void GiveRec(GameObject current, Transform hitGo, Recepticle rec)
     {
@@ -59,6 +74,21 @@ public class Anim : MonoBehaviour
             }
         ));
         return currentGo;
+    }
+    
+    public void SpawnInInventory(Spawner spawner, Inventory inv, int index)
+    {
+        var currentGo = spawner.SpawnObject();
+        StartCoroutine(nameof(AnimFromTo), new Holder(
+            currentGo.transform,
+            grabPos.transform,
+            (hold) =>
+            {
+                currentGo.transform.position = grabPos.position;
+                inv.SetIndex(index, currentGo);
+                currentGo.SetActive(false);
+            }
+        ));
     }
 
     public void Warn(GameObject hitGo)

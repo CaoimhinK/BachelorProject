@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
@@ -25,7 +23,7 @@ public class RoomEnterTrigger : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         input.currentMessageName = enterMessageName;
         input.TriggerEnterMessage();
         _hasBeenShown = true;

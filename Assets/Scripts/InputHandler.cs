@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
+﻿using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
@@ -146,7 +143,7 @@ public class InputHandler : MonoBehaviour
             var hitGo = hitInfo.collider.gameObject;
             if (HitGoTypeIs<DelButton>(hitGo, out var but) && but.bin)
             {
-                var temp = inventory.StoreIndex(index, null);
+                var temp = inventory.GetIndex(index);
                 if (temp)
                 {
                     temp.SetActive(true);
@@ -155,22 +152,42 @@ public class InputHandler : MonoBehaviour
             }
             else if (HitGoTypeIs<Recepticle>(hitGo, out var rec))
             {
-                var temp = inventory.StoreIndex(index, null);
-                if (temp && !rec.HasObject() && temp.GetComponent<MathObj>().Type == rec.type)
+                if (inventory.IndexFull(index) && !rec.HasObject())
                 {
-                    temp.SetActive(true);
-                    _anim.GiveRec(temp, hitGo.transform, rec);
+                    var temp = inventory.GetIndex(index);
+                    if (temp.GetComponent<MathObj>().Type == rec.type)
+                    {
+                        temp.SetActive(true);
+                        _anim.GiveRec(temp, hitGo.transform, rec);
+                    }
+                    else
+                    {
+                        inventory.SetIndex(index, temp);
+                        _anim.Warn(hitGo);
+                    }
                 }
-                else if (temp)
+                else if (!inventory.IndexFull(index) && rec.HasObject())
                 {
-                    inventory.StoreIndex(index, temp);
+                    _anim.TakeRecToInventory(rec, inventory, index);
+                }
+                else
+                {
                     _anim.Warn(hitGo);
                 }
+            }
+            else if (HitGoTypeIs<Spawner>(hitGo, out var spawn))
+            {
+                if (inventory.IndexFull(index))
+                {
+                    _anim.Warn(hitGo);
+                    return;
+                }
+                _anim.SpawnInInventory(spawn, inventory, index);
             }
             else
             {
                 if (_currentGo) _currentGo.SetActive(false);
-                _currentGo = inventory.StoreIndex(index, _currentGo);
+                _currentGo = inventory.SwapIndex(index, _currentGo);
                 if (_currentGo) _currentGo.SetActive(true);
             }
         }

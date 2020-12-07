@@ -20,11 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Module Prefabs/VecFuncs/Vec Functions.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Module Prefabs/VecFuncs/Vec Functions.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Coplanarity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Coplanarity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Other Prefabs/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Other Prefabs/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomEnterTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RoomEnterTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Anim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Anim.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +83,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NormalAplier.cs" />
@@ -90,11 +94,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Math/NormalApplicant.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Anim.cs" />
         <option value="$PROJECT_DIR$/Assets/Materials/FadeOutShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Coplanarity.cs" />
         <option value="$PROJECT_DIR$/Assets/RoomEnterTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Coplanarity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Anim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       </list>
     </option>
@@ -165,7 +170,7 @@
       <workItem from="1606409757316" duration="4067000" />
       <workItem from="1606814949420" duration="25216000" />
       <workItem from="1606909484918" duration="6845000" />
-      <workItem from="1607335754759" duration="4450000" />
+      <workItem from="1607335754759" duration="17283000" />
     </task>
     <servers />
   </component>

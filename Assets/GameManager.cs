@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +9,10 @@ public class GameManager : MonoBehaviour
     public FieldGenerator fieldGenerator;
     public Noidel.Button[] buttons;
 
+    public bool[] roomOverride;
+
     private Chapter _chapter;
-    private bool halt;
+    private bool _halt;
 
     void Start()
     {
@@ -31,11 +30,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (halt)
+        if (_halt)
         {
             if (Input.GetButtonDown("Grab"))
             {
-                halt = false;
+                _halt = false;
                 mm.HideMessage();
                 input.lockInput = false;
             }
@@ -47,7 +46,7 @@ public class GameManager : MonoBehaviour
             {
                 mm.ShowMessage("DoorLocked");
                 input.lockInput = true;
-                halt = true;
+                _halt = true;
             }
         }
 
@@ -69,33 +68,28 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case Chapter.Room1:
-                if (fieldGenerator.CheckSolved())
+                if (roomOverride[0] || fieldGenerator.CheckSolved())
                 {
-                    rooms[1].SetActive(true);
-                    doors[1].gameObject.SetActive(true);
-                    doors[0].UnlockDoor();
+                    NextRoom(1);
                     _chapter = Chapter.Room2;
                 }
                 break;
             case Chapter.Room2:
-                if (buttons[0].WasPushed())
+                if (roomOverride[1] || buttons[0].WasPushed()) // TODO: add real goal
                 {
-                    rooms[2].SetActive(true);
-                    doors[2].gameObject.SetActive(true);
-                    doors[1].UnlockDoor();
+                    NextRoom(2);
                     _chapter = Chapter.Room3;
                 }
                 break;
             case Chapter.Room3:
-                if (buttons[1].WasPushed())
+                if (roomOverride[2] || buttons[1].WasPushed()) // TODO: add real goal
                 {
-                    rooms[3].SetActive(true);
-                    doors[2].UnlockDoor();
+                    NextRoom(3);
                     _chapter = Chapter.Room4;
                 }
                 break;
             case Chapter.Room4:
-                if (buttons[2].WasPushed())
+                if (roomOverride[3] || buttons[2].WasPushed()) // TODO: add real goal
                 {
                     _chapter = Chapter.Ending;
                 }
@@ -105,6 +99,13 @@ public class GameManager : MonoBehaviour
                 input.lockInput = true;
                 break;
         }
+    }
+
+    private void NextRoom(int index)
+    {
+        rooms[index].SetActive(true);
+        if (index < 3) doors[index].gameObject.SetActive(true);
+        doors[index - 1].UnlockDoor();
     }
 }
 

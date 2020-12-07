@@ -67,11 +67,26 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public GameObject StoreIndex(int index, GameObject go)
+    public bool IndexFull(int index)
+    {
+        return !!_gos[index];
+    }
+
+    public GameObject SwapIndex(int index, GameObject go)
     {
         var temp = _gos[index];
         _gos[index] = go;
         RedrawImages();
         return temp;
+    }
+
+    public GameObject GetIndex(int index)
+    {
+        return SwapIndex(index, null);
+    }
+
+    public void SetIndex(int index, GameObject go)
+    {
+        SwapIndex(index, go);
     }
 }
