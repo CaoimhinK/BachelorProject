@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Assertions.Comparers;
 
 public class MatrixApplier : MonoBehaviour
 {
@@ -23,16 +20,33 @@ public class MatrixApplier : MonoBehaviour
     {
         if (!_animating)
         {
-            var result = rec.GetMatrix().MultiplyPoint(go.transform.localPosition);
-            if (!float.IsNaN(result.x))
-            {
-                StartCoroutine(nameof(MoveGo), result);
-            }
-            else
-            {
-                Debug.Log("is NaN");
-            }
+            //var result = rec.GetMatrix().MultiplyPoint(go.transform.localPosition);
+            var mat = rec.GetMatrix();
+            var mesh = go.GetComponent<MeshFilter>().mesh;
+            TransformMesh(mesh, mat);
+            // if (!float.IsNaN(result.x))
+            // {
+            //     StartCoroutine(nameof(MoveGo), result);
+            // }
+            // else
+            // {
+            //     Debug.Log("is NaN");
+            // }
         }
+    }
+
+    private void TransformMesh(Mesh mesh, Matrix4x4 mat)
+    {
+        var oldVertices = mesh.vertices;
+        var newVertices = new Vector3[oldVertices.Length];
+        for (var i = 0; i < oldVertices.Length; i++)
+        {
+            newVertices[i] = mat.MultiplyPoint(oldVertices[i]);
+        }
+
+        mesh.vertices = newVertices;
+        mesh.Optimize();
+        mesh.RecalculateNormals();
     }
 
     void Animate()
