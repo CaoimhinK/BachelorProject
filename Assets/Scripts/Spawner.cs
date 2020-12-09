@@ -85,12 +85,12 @@ public class Spawner : MonoBehaviour
                 if (_func)
                 {
                     mo.value = _func.value;
-                    text = ((int)(_func.value * 100)/100f).ToString();
+                    text = (TypeFunctions.Round2(_func.value * 100)/100f).ToString();
                 }
                 else
                 {
                     mo.value = spawnValue;
-                    text = ((int)(spawnValue * 100)/100f).ToString();
+                    text = (TypeFunctions.Round2(spawnValue * 100)/100f).ToString();
                 }
                 tex.fontSize = Mathf.RoundToInt(Mathf.Min(2f / text.Length * 200f, 200f));
                 tex.text = text;
@@ -119,6 +119,10 @@ public class Spawner : MonoBehaviour
                 if (_matCont)
                 {
                     mo.matValue = _matCont.Mat;
+                }
+                else if (_func)
+                {
+                    mo.matValue = _func.mat;
                 }
                 else
                 {

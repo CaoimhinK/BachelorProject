@@ -12,8 +12,8 @@ public class NormalApplicant : MonoBehaviour
     public Transform origin;
     public Transform tip;
     public Spawner[] vertices;
-    public bool isCorrect;
     public GameObject vertexIndicator;
+    public bool isCorrect;
 
     private int _activeVertexCount;
     

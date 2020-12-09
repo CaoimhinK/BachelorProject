@@ -50,16 +50,29 @@ public class Anim : MonoBehaviour
         ));
     }
 
-    public void GiveRec(GameObject current, Transform hitGo, Recepticle rec)
+    private bool _isGiving;
+    public bool GiveRec(GameObject current, Transform hitGo, Recepticle rec)
     {
-        StartCoroutine(nameof(AnimFromTo), new Holder(
-                current.transform,
-                hitGo,
-                (hold) => {
-                    rec.GiveObject(current);
-                    current.transform.localPosition = Vector3.up * 0.05f;
-                }
-            ));
+        if (_isGiving)
+        {
+            current.SetActive(false);
+            Warn(hitGo.gameObject);
+            return false;
+        }
+        else
+        {
+            _isGiving = true;
+            StartCoroutine(nameof(AnimFromTo), new Holder(
+                    current.transform,
+                    hitGo,
+                    (hold) => {
+                        rec.GiveObject(current);
+                        current.transform.localPosition = Vector3.up * 0.05f;
+                        _isGiving = false;
+                    }
+                ));
+            return true;
+        }
     }
 
     public GameObject Spawn(Spawner spawner)

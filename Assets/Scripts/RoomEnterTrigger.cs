@@ -6,18 +6,19 @@ public class RoomEnterTrigger : MonoBehaviour
 {
     public InputHandler input;
     public string enterMessageName;
+    public bool deactivated;
     private bool _hasBeenShown;
     private bool _messageDone;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_hasBeenShown)
+        if (!deactivated && !_hasBeenShown)
             StartCoroutine(nameof(Wait));
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!_hasBeenShown)
+        if (!deactivated && !_hasBeenShown)
             StopCoroutine(nameof(Wait));
     }
 

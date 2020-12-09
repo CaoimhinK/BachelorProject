@@ -7,6 +7,7 @@ public class Function : MonoBehaviour
 {
     public Vector3 vec;
     public float value;
+    public Matrix4x4 mat;
     public FuncType type;
     
     public Recepticle vec1;
@@ -18,7 +19,7 @@ public class Function : MonoBehaviour
     public void Start()
     {
         var io = TypeFunctions.EvaluateFunction(type, vec1, vec2);
-        io.Out(out vec, out value, out var strHead, out var strBody, out var fontSize);
+        io.Out(out vec, out value, out var mat, out var strHead, out var strBody, out var fontSize);
         
         var spaw = GetComponent<Spawner>();
         spaw.LoadTex();
@@ -33,7 +34,7 @@ public class Function : MonoBehaviour
         if (vec1.HasContentChanged() || vec2 && vec2.HasContentChanged())
         {
             var io = TypeFunctions.EvaluateFunction(type, vec1, vec2);
-            io.Out(out vec, out value, out var strHead, out var strBody, out var fontSize);
+            io.Out(out vec, out value, out mat, out var strHead, out var strBody, out var fontSize);
             
             GetComponent<Spawner>().ChangeText(strHead, strBody, fontSize);
             vec1.ListenToContent();

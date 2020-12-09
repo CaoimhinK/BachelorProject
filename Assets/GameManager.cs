@@ -71,21 +71,21 @@ public class GameManager : MonoBehaviour
             case Chapter.Room1:
                 if (roomOverride[0] || fieldGenerator.CheckSolved())
                 {
-                    NextRoom(1);
+                    NextRoom(1, roomOverride[0]);
                     _chapter = Chapter.Room2;
                 }
                 break;
             case Chapter.Room2:
                 if (roomOverride[1] || coplanarity.CheckSolved())
                 {
-                    NextRoom(2);
+                    NextRoom(2, roomOverride[1]);
                     _chapter = Chapter.Room3;
                 }
                 break;
             case Chapter.Room3:
                 if (roomOverride[2] || buttons[1].WasPushed()) // TODO: add real goal
                 {
-                    NextRoom(3);
+                    NextRoom(3, roomOverride[2]);
                     _chapter = Chapter.Room4;
                 }
                 break;
@@ -102,9 +102,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NextRoom(int index)
+    private void NextRoom(int index, bool roomOverride)
     {
         rooms[index].SetActive(true);
+        rooms[index].GetComponent<RoomEnterTrigger>().deactivated = roomOverride;
         if (index < 3) doors[index].gameObject.SetActive(true);
         doors[index - 1].UnlockDoor();
     }

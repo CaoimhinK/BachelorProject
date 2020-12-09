@@ -158,7 +158,10 @@ public class InputHandler : MonoBehaviour
                     if (temp.GetComponent<MathObj>().Type == rec.type)
                     {
                         temp.SetActive(true);
-                        _anim.GiveRec(temp, hitGo.transform, rec);
+                        if (!_anim.GiveRec(temp, hitGo.transform, rec))
+                        {
+                            inventory.SetIndex(index, temp);
+                        }
                     }
                     else
                     {
