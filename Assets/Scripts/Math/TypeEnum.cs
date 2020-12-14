@@ -14,6 +14,7 @@ public enum FuncType
     Negative,
     Normalize,
     MatMul,
+    Div,
 }
 
 public enum ObjType
@@ -125,6 +126,12 @@ static class TypeFunctions
                 mat = vec1.GetMatrix() * vec2.GetMatrix();            
                 strHead = StrHead("*");
                 strBody = StrBody(mat);
+                numTypeb = false;
+                break;
+            case FuncType.Div:
+                value = vec1.GetValue() / vec2.GetValue();
+                strHead = StrHead("/");
+                strBody = StrBody(value);
                 numTypeb = false;
                 break;
         } 

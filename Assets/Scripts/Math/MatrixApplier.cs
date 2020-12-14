@@ -16,6 +16,7 @@ public class MatrixApplier : MonoBehaviour
     private Vector3 _startScale;
     private Vector3 _endScale;
     private Matrix4x4 _startMatrix;
+    private Material _mat;
 
     public void Start()
     {
@@ -23,11 +24,24 @@ public class MatrixApplier : MonoBehaviour
         var startRot = go.transform.localRotation;
         var startScale = go.transform.localScale;
         _startMatrix = Matrix4x4.TRS(startPos, startRot, startScale);
+        _mat = go.GetComponent<MeshRenderer>().material;
     }
 
     public void Update()
     {
         if (_animating) Animate();
+    }
+
+    void OnTriggerEnter()
+    {
+        go.transform.position += Vector3.up * 0.1f;
+        _mat.color = Color.red;
+    }
+
+    void OnTriggerExit()
+    {
+        go.transform.position += Vector3.down * 0.1f;
+        _mat.color = Color.white;
     }
 
     public void ApplyMatrix()
