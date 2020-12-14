@@ -7,9 +7,9 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BackfaceShader.shader" t="Include" />
         <e p="Coplanarity.cs" t="Include" />
         <e p="GameManager.cs" t="Include" />
-        <e p="MatrixableMesh.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Anim.cs" t="Include" />
           <e p="Button.cs" t="Include" />
@@ -38,6 +38,7 @@
           <e p="TextTexture.cs" t="Include" />
           <e p="VertexTrigger.cs" t="Include" />
         </e>
+        <e p="Shapes.cs" t="Include" />
       </e>
       <e p="BachelorProject.sln" t="IncludeFlat" />
       <e p="Temp/bin" t="ExcludeRecursive" />

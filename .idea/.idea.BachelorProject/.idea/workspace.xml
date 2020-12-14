@@ -21,26 +21,22 @@
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Coplanarity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Coplanarity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Door.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Door.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ground.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ground.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Light.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Light.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RoomEnterTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RoomEnterTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MatrixableMesh.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MatrixableMesh.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextField.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextField.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wall.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wall.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/circle.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/circle.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/circle.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/circle.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/square.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/square.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/square.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/square.obj.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/triangle.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/triangle.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/triangle.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/triangle.obj.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +47,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/MatrixableMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/dd/dd7cfd8e/Matrix4x4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/f5/56e69684/Vector4.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,9 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/TextTexture.cs" />
-        <option value="$PROJECT_DIR$/Assets/NewGrabScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/VectorObj.cs" />
         <option value="$PROJECT_DIR$/Assets/NumberObj.cs" />
         <option value="$PROJECT_DIR$/Assets/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/TextTextureEditor.cs" />
@@ -102,7 +94,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Anim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Coplanarity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button.cs" />
         <option value="$PROJECT_DIR$/Assets/FadeShader.shader" />
@@ -111,6 +102,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/MatrixableMesh.cs" />
+        <option value="$PROJECT_DIR$/Assets/ContourShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shapes.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/BackfaceShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" />
       </list>
     </option>
@@ -183,6 +178,7 @@
       <workItem from="1606909484918" duration="6845000" />
       <workItem from="1607335754759" duration="17283000" />
       <workItem from="1607421509033" duration="16822000" />
+      <workItem from="1607937252546" duration="21080000" />
     </task>
     <servers />
   </component>
