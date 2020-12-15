@@ -5,38 +5,18 @@ using UnityEngine.Animations;
 
 public class MatrixContainer : MonoBehaviour
 {
-    public Matrix4x4 Mat
-    {
-        get
-        {
-            _mat = CreateMatrix(cols);
-            return _mat;
-        }
-    }
+    public Matrix4x4 Mat => CreateMatrix(cols);
+
     public MatCol[] cols;
     public Axis axis;
 
-    private Matrix4x4 _mat;
     private static int _matCount = 0;
 
     private void Start()
     {
-        _mat = CreateMatrix(cols);
         var spaw = GetComponent<Spawner>();
         spaw.LoadTex();
         spaw.ChangeText("M", 200);
-    }
-
-    public void Update()
-    {
-        if (cols.Any(col => col.HasContentChanged()))
-        {
-            _mat = CreateMatrix(cols);
-            foreach (var col in cols)
-            {
-                col.ListenToContent();
-            }
-        }
     }
 
     private Matrix4x4 CreateMatrix(MatCol[] columns)
@@ -45,14 +25,14 @@ public class MatrixContainer : MonoBehaviour
         if (columns.Length == 4)
         {
             newMat = new Matrix4x4(
-                columns[0].colValue, columns[1].colValue, columns[2].colValue, columns[3].colValue
+                columns[0].ColValue, columns[1].ColValue, columns[2].ColValue, columns[3].ColValue
             );
         }
         else
         {
-            var colA = columns[0].colValue;
-            var colB = columns[1].colValue;
-            var colC = columns[2].colValue;
+            var colA = columns[0].ColValue;
+            var colB = columns[1].ColValue;
+            var colC = columns[2].ColValue;
             switch (axis)
             {
                 case Axis.Z:

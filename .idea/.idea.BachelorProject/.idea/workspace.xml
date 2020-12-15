@@ -22,21 +22,18 @@
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BackfaceShader.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BackfaceShader.shader.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MatrixableMesh.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MatrixableMesh.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LightMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LightMat.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatCol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatCol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/circle.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/circle.mtl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/circle.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/circle.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/square.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/square.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/square.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/square.obj.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/triangle.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/triangle.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/triangle.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/triangle.obj.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shapes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shapes.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,68 +44,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/dd/dd7cfd8e/Matrix4x4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/f5/56e69684/Vector4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/92/f503a34e/Material.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/dd/dd7cfd8e/Matrix4x4.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/f5/56e69684/Vector4.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Unity/Hub/Editor/2020.1.2f1/Editor/Data/CGIncludes/UnityStandardCoreForward.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Unity/Hub/Editor/2020.1.2f1/Editor/Data/CGIncludes/UnityStandardCore.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275994A8-3AFE-4714-92CD-8A3642F9FE52/3c/92c392cc/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/NumberObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Test.cs" />
-        <option value="$PROJECT_DIR$/Assets/TextTextureEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/MathObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/TypeEnum.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ColorPallette.cs" />
-        <option value="$PROJECT_DIR$/Assets/Recepticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Spawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NewGrabScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextTexture.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixRow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixCol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixColumn.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ColorPalette.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TypeEnum.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Function.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Applier.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MathObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatCol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Invertory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextTextureEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/VectorContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NormalAplier.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GrabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MatrixApplier.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NormalApplier.cs" />
-        <option value="$PROJECT_DIR$/Assets/MessageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Door.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Math/NormalApplicant.cs" />
-        <option value="$PROJECT_DIR$/Assets/Materials/FadeOutShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/RoomEnterTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Anim.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FieldGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Coplanarity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Button.cs" />
-        <option value="$PROJECT_DIR$/Assets/FadeShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Materials/FadeShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Math/MathObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Recepticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/MatrixableMesh.cs" />
-        <option value="$PROJECT_DIR$/Assets/ContourShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Shapes.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/BackfaceShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/BackfaceShader.shader" />
+      <option value="$PROJECT_DIR$/Assets/Backface.shader" />
+      <option value="$PROJECT_DIR$/Assets/StandardDoubleSided.shader" />
+      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatCol.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatrixContainer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Shapes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1jjnOJe62nJxQDYs9plhA8HAtQS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -118,6 +72,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -130,7 +85,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -139,7 +94,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -179,6 +134,7 @@
       <workItem from="1607335754759" duration="17283000" />
       <workItem from="1607421509033" duration="16822000" />
       <workItem from="1607937252546" duration="21080000" />
+      <workItem from="1608027078309" duration="17790000" />
     </task>
     <servers />
   </component>

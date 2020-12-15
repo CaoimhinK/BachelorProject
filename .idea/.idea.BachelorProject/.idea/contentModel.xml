@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_BachelorProject.661470719.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_BachelorProject.661470719.00" t="ExcludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/consoles/ide" t="IncludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="BackfaceShader.shader" t="Include" />
         <e p="Coplanarity.cs" t="Include" />
         <e p="GameManager.cs" t="Include" />
         <e p="Scripts" t="Include">
@@ -39,6 +38,9 @@
           <e p="VertexTrigger.cs" t="Include" />
         </e>
         <e p="Shapes.cs" t="Include" />
+        <e p="Textures" t="Include">
+          <e p="StandardDoubleSided.shader" t="Include" />
+        </e>
       </e>
       <e p="BachelorProject.sln" t="IncludeFlat" />
       <e p="Temp/bin" t="ExcludeRecursive" />

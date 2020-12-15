@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class MatrixApplier : MonoBehaviour
@@ -8,6 +9,7 @@ public class MatrixApplier : MonoBehaviour
     public GameObject go;
     public GameObject target;
     public bool chainMatrix;
+    public Matrix4x4 correctMatrix = Matrix4x4.identity;
 
     private bool _animating;
     private float _startTime;
@@ -15,10 +17,13 @@ public class MatrixApplier : MonoBehaviour
     private Vector3[] _endVertices;
     private Material _mat;
     private Material _targetMat;
+    private Vector3[] _correctVertices;
 
     private Color _col;
     private Mesh _startMesh;
     private Mesh _mesh;
+
+    private bool _solved;
 
     public void Start()
     {
@@ -27,6 +32,12 @@ public class MatrixApplier : MonoBehaviour
         _col = _targetMat.color;
         _mesh = go.GetComponent<MeshFilter>().mesh;
         _startMesh = Instantiate(_mesh);
+        var verts = target.GetComponent<MeshFilter>().mesh.vertices;
+        _correctVertices = new Vector3[verts.Length];
+        for (var i = 0; i < verts.Length; i++)
+        {
+            _correctVertices[i] = correctMatrix * verts[i];
+        }
     }
 
     public void Update()
@@ -52,33 +63,37 @@ public class MatrixApplier : MonoBehaviour
 
     public void ApplyMatrix()
     {
-        if (!_animating)
-        {
-            var mat = rec.GetMatrix();
+        if (_animating) return;
+        
+        var mat = rec.GetMatrix();
+        _startVertices = _mesh.vertices;
+        _endVertices = new Vector3[_startVertices.Length];
 
-            if (chainMatrix)
-            {
-                _startVertices = _mesh.vertices;
-            }
-            else
-            {
-                _startVertices = _startMesh.vertices;
-            }
-            
-            _endVertices = new Vector3[_startVertices.Length];
-            
+        if (chainMatrix)
+        {
             for (var i = 0; i < _endVertices.Length; i++)
             {
                 _endVertices[i] = mat.MultiplyPoint(_startVertices[i]);
             }
-
-            StartCoroutine(nameof(MoveGo));
         }
+        else
+        {
+            for (var i = 0; i < _endVertices.Length; i++)
+            {
+                _endVertices[i] = mat.MultiplyPoint(_startMesh.vertices[i]);
+            }
+        }
+        StartCoroutine(nameof(MoveGo));
     }
 
     public bool IsCorrect()
     {
-        return false;
+        for (var i = 0; i < _correctVertices.Length; i++)
+        {
+            if (_correctVertices.All((vertex) => Vector3.Distance(_mesh.vertices[i],vertex) > 0.1f)) return false;
+        }
+
+        return true;
     }
 
     void Animate()
@@ -91,7 +106,6 @@ public class MatrixApplier : MonoBehaviour
         }
 
         _mesh.vertices = vertices;
-        _mesh.RecalculateNormals();
     }
     
     IEnumerator MoveGo()
