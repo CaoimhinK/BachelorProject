@@ -5217,7 +5217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f8441be0fc20649b2be1291b8ae98d72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.38
+      value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8441be0fc20649b2be1291b8ae98d72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5262,6 +5262,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8441be0fc20649b2be1291b8ae98d72, type: 3}
       propertyPath: m_Name
       value: sculpti
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: f8441be0fc20649b2be1291b8ae98d72, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8441be0fc20649b2be1291b8ae98d72, type: 3}
