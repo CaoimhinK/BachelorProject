@@ -10,8 +10,6 @@ public class MatrixApplier : MonoBehaviour
     public GameObject target;
     public bool chainMatrix;
     public Matrix4x4 correctMatrix = Matrix4x4.identity;
-    public Vector3[] correctVertices;
-    public Vector3[] endVertices;
 
     private bool _animating;
     private float _startTime;
@@ -34,13 +32,11 @@ public class MatrixApplier : MonoBehaviour
         _col = _targetMat.color;
         _mesh = go.GetComponent<MeshFilter>().mesh;
         _startMesh = Instantiate(_mesh);
-        var verts = target.GetComponent<MeshFilter>().mesh.vertices;
+        var verts = go.GetComponent<MeshFilter>().mesh.vertices;
         _correctVertices = new Vector3[verts.Length];
-        correctVertices = new Vector3[verts.Length];
         for (var i = 0; i < verts.Length; i++)
         {
-            _correctVertices[i] = correctMatrix * verts[i];
-            correctVertices[i] = correctMatrix * verts[i];
+            _correctVertices[i] = correctMatrix.MultiplyPoint(verts[i]);
         }
     }
 
@@ -72,14 +68,12 @@ public class MatrixApplier : MonoBehaviour
         var mat = rec.GetMatrix();
         _startVertices = _mesh.vertices;
         _endVertices = new Vector3[_startVertices.Length];
-        endVertices = new Vector3[_startVertices.Length];
 
         if (chainMatrix)
         {
             for (var i = 0; i < _endVertices.Length; i++)
             {
                 _endVertices[i] = mat.MultiplyPoint(_startVertices[i]);
-                endVertices[i] = mat.MultiplyPoint(_startVertices[i]);
             }
         }
         else
@@ -87,7 +81,6 @@ public class MatrixApplier : MonoBehaviour
             for (var i = 0; i < _endVertices.Length; i++)
             {
                 _endVertices[i] = mat.MultiplyPoint(_startMesh.vertices[i]);
-                endVertices[i] = mat.MultiplyPoint(_startMesh.vertices[i]);
             }
         }
         StartCoroutine(nameof(MoveGo));
@@ -95,7 +88,7 @@ public class MatrixApplier : MonoBehaviour
 
     public bool IsCorrect()
     {
-        return false;
+        return _mesh.vertices.All((meshVertex) => _correctVertices.Any((correctVertex) => Vector3.Distance(correctVertex,meshVertex) < 0.05f));
     }
 
     void Animate()

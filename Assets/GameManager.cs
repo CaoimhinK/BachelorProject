@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public FieldGenerator fieldGenerator;
     public Coplanarity coplanarity;
     public Shapes shapes;
-    public Noidel.Button[] buttons;
 
     public bool[] roomOverride;
 
@@ -91,7 +90,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case Chapter.Room4:
-                if (roomOverride[3] || buttons[2].WasPushed()) // TODO: add real goal
+                if (roomOverride[3] || false) // TODO: add real goal
                 {
                     _chapter = Chapter.Ending;
                 }

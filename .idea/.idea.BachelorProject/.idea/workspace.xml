@@ -20,20 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eec57264-6a17-4c7a-b066-9e9f8d83ee24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BachelorProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BackfaceShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BackfaceShader.shader.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/LightMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/LightMat.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatCol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatCol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Math/MatrixContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shapes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shapes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cross.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cross.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cross.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cross.obj.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/half_circle.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/half_circle.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/half_circle.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/half_circle.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sculpti.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sculpti.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sculpti.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sculpti.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/square.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/square.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/triangle.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/triangle.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/triangle.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/triangle.obj.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +63,11 @@
       <option value="$PROJECT_DIR$/Assets/BackfaceShader.shader" />
       <option value="$PROJECT_DIR$/Assets/Backface.shader" />
       <option value="$PROJECT_DIR$/Assets/StandardDoubleSided.shader" />
-      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatCol.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatrixContainer.cs" />
       <option value="$PROJECT_DIR$/Assets/Shapes.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Math/MatrixApplier.cs" />
+      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jjnOJe62nJxQDYs9plhA8HAtQS" />
@@ -135,6 +141,7 @@
       <workItem from="1607421509033" duration="16822000" />
       <workItem from="1607937252546" duration="21080000" />
       <workItem from="1608027078309" duration="17790000" />
+      <workItem from="1608110852991" duration="8952000" />
     </task>
     <servers />
   </component>
