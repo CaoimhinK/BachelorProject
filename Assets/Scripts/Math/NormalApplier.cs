@@ -64,7 +64,8 @@ public class NormalApplier : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        if (Vector3.Distance(napp.CorrectDir(), rec.GetVector()) < 0.01f) {
+        if (Vector3.Distance(napp.CorrectDir(), rec.GetVector().normalized) < 0.01f) {
+            napp.isCorrect = true;
             isCorrect = true;
         }
         _animating = false;

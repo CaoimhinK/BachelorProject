@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class GameManager : MonoBehaviour
     public FieldGenerator fieldGenerator;
     public Coplanarity coplanarity;
     public Shapes shapes;
+    public MatrixApplier texture;
 
     public bool[] roomOverride;
 
     private Chapter _chapter;
     private bool _halt;
+    private bool ende;
 
     void Start()
     {
@@ -90,14 +93,16 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case Chapter.Room4:
-                if (roomOverride[3] || false) // TODO: add real goal
+                if (roomOverride[3] || texture.IsCorrect())
                 {
                     _chapter = Chapter.Ending;
                 }
                 break;
             case Chapter.Ending:
-                mm.ShowMessage("Ending");
-                input.lockInput = true;
+                if (!ende)
+                {
+                    StartCoroutine(nameof(QueueEnding));
+                }
                 break;
         }
     }
@@ -108,6 +113,14 @@ public class GameManager : MonoBehaviour
         rooms[index].GetComponent<RoomEnterTrigger>().deactivated = roomOverride[index - 1];
         if (index < 3) doors[index].gameObject.SetActive(true);
         doors[index - 1].UnlockDoor();
+    }
+
+    IEnumerator QueueEnding()
+    {
+        yield return new WaitForSeconds(3f);
+        ende = true;
+        mm.ShowMessage("Ending");
+        input.lockInput = true;
     }
 }
 
