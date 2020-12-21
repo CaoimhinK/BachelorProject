@@ -1189,6 +1189,8 @@ GameObject:
   m_Component:
   - component: {fileID: 349150552}
   - component: {fileID: 349150553}
+  - component: {fileID: 349150555}
+  - component: {fileID: 349150554}
   m_Layer: 0
   m_Name: Coplanatiry
   m_TagString: Untagged
@@ -1227,15 +1229,64 @@ MonoBehaviour:
   points:
   - {fileID: 1603165337}
   - {fileID: 1052406072}
-  - {fileID: 1421138034}
   - {fileID: 2055586108}
+  - {fileID: 1421138034}
   spawns:
   - {fileID: 1831242035}
   - {fileID: 2110492026}
-  - {fileID: 1346705135}
   - {fileID: 588364219}
+  - {fileID: 1346705135}
   answer: {fileID: 340462311}
   but: {fileID: 684323620}
+--- !u!33 &349150554
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349150551}
+  m_Mesh: {fileID: 0}
+--- !u!23 &349150555
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349150551}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e81d4311d4bd1b8478c01c19029f9c8b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &361248535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7854318625024890197, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
@@ -1702,7 +1753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1718,7 +1769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141143765973767222, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_Name
-      value: Vertex 4
+      value: Vertex 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
@@ -2100,7 +2151,7 @@ MonoBehaviour:
   coplanarity: {fileID: 349150553}
   shapes: {fileID: 589010317}
   texture: {fileID: 361248537}
-  roomOverride: 00000000
+  roomOverride: 01000000
 --- !u!4 &487647597
 Transform:
   m_ObjectHideFlags: 0
@@ -7144,8 +7195,8 @@ Transform:
   m_Children:
   - {fileID: 1603165337}
   - {fileID: 1052406072}
-  - {fileID: 1421138034}
   - {fileID: 2055586108}
+  - {fileID: 1421138034}
   m_Father: {fileID: 349150552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7624,7 +7675,7 @@ GameObject:
   - component: {fileID: 1421138036}
   - component: {fileID: 1421138035}
   m_Layer: 0
-  m_Name: Point 3
+  m_Name: Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7642,7 +7693,7 @@ Transform:
   m_LocalScale: {x: 0.50000006, y: 0.5, z: 0.50000006}
   m_Children: []
   m_Father: {fileID: 1334124709}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1421138035
 SphereCollider:
@@ -8009,8 +8060,8 @@ Transform:
   m_Children:
   - {fileID: 1831242034}
   - {fileID: 2110492025}
-  - {fileID: 1346705134}
   - {fileID: 588364218}
+  - {fileID: 1346705134}
   - {fileID: 1267386629}
   m_Father: {fileID: 1556693636}
   m_RootOrder: 2
@@ -10247,7 +10298,7 @@ GameObject:
   - component: {fileID: 2055586110}
   - component: {fileID: 2055586109}
   m_Layer: 0
-  m_Name: Point 4
+  m_Name: Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10265,7 +10316,7 @@ Transform:
   m_LocalScale: {x: 0.50000006, y: 0.5, z: 0.50000006}
   m_Children: []
   m_Father: {fileID: 1334124709}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2055586109
 SphereCollider:
@@ -11271,7 +11322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5723300064140975542, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11287,7 +11338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141143765973767222, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
       propertyPath: m_Name
-      value: Vertex 3
+      value: Vertex 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3aa8fc29de4b24bade3ed217e5dcdb, type: 3}
