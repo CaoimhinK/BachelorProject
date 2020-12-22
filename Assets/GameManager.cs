@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _chapter = Chapter.PreStart;
+        _chapter = Chapter.Tutorial;
         input.lockInput = true;
         foreach (var room in rooms)
         {
@@ -56,12 +56,20 @@ public class GameManager : MonoBehaviour
 
         switch (_chapter)
         {
-            case Chapter.PreStart:
+            case Chapter.Tutorial:
                 if (!mm) break;
-                mm.ShowMessage("Start");
-                _chapter = Chapter.Start;
                 rooms[0].SetActive(true);
                 doors[0].gameObject.SetActive(true);
+                mm.ShowMessage("Tutorial");
+                _chapter = Chapter.PreStart;
+                break;
+            case Chapter.PreStart:
+                if (Input.GetButtonDown("Grab"))
+                {
+                    mm.HideMessage();
+                    mm.ShowMessage("Start");
+                    _chapter = Chapter.Start;
+                }
                 break;
             case Chapter.Start:
                 if (Input.GetButtonDown("Grab"))
@@ -133,4 +141,5 @@ enum Chapter
     Room3,
     Room4,
     Ending,
+    Tutorial,
 }

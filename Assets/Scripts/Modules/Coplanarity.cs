@@ -54,7 +54,6 @@ public class Coplanarity : MonoBehaviour
         cyl.GetComponent<MeshRenderer>().material.color = Color.red;
         cyl.transform.parent = points[0].parent;
         _distance = Vector3.Dot(third, normal);
-        Debug.Log(_distance);
         cyl.transform.localPosition = specialPoint + ((points[3].localPosition - specialPoint) / 2f);
         cyl.transform.localScale = new Vector3(0.1f, _distance / 2f, 0.1f);
         cyl.transform.up = normal;
