@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private Chapter _chapter;
     private bool _halt;
     private bool ende;
+    private bool exiting;
 
     void Start()
     {
@@ -34,6 +35,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (exiting)
+            {
+                mm.HideMessage();
+                input.lockInput = false;
+                exiting = false;
+            }
+            else
+            {
+                mm.Exit();
+                input.lockInput = true;
+                exiting = true;
+            }
+        }
         if (_halt)
         {
             if (Input.GetButtonDown("Grab"))
