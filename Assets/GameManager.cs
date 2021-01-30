@@ -12,12 +12,9 @@ public class GameManager : MonoBehaviour
     public Shapes shapes;
     public MatrixApplier texture;
 
-    public bool[] roomOverride;
-
     private Chapter _chapter;
     private bool _halt;
     private bool ende;
-    private bool exiting;
 
     void Start()
     {
@@ -35,21 +32,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (exiting)
-            {
-                mm.HideMessage();
-                input.lockInput = false;
-                exiting = false;
-            }
-            else
-            {
-                mm.Exit();
-                input.lockInput = true;
-                exiting = true;
-            }
-        }
         if (_halt)
         {
             if (Input.GetButtonDown("Grab"))
@@ -96,28 +78,28 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case Chapter.Room1:
-                if (roomOverride[0] || fieldGenerator.CheckSolved())
+                if (input.roomOverride || fieldGenerator.CheckSolved())
                 {
                     NextRoom(1);
                     _chapter = Chapter.Room2;
                 }
                 break;
             case Chapter.Room2:
-                if (roomOverride[1] || coplanarity.CheckSolved())
+                if (input.roomOverride || coplanarity.CheckSolved())
                 {
                     NextRoom(2);
                     _chapter = Chapter.Room3;
                 }
                 break;
             case Chapter.Room3:
-                if (roomOverride[2] || shapes.CheckSolved())
+                if (input.roomOverride || shapes.CheckSolved())
                 {
                     NextRoom(3);
                     _chapter = Chapter.Room4;
                 }
                 break;
             case Chapter.Room4:
-                if (roomOverride[3] || texture.IsCorrect())
+                if (Input.GetKeyDown(KeyCode.X) || texture.IsCorrect())
                 {
                     _chapter = Chapter.Ending;
                 }
@@ -134,7 +116,6 @@ public class GameManager : MonoBehaviour
     private void NextRoom(int index)
     {
         rooms[index].SetActive(true);
-        rooms[index].GetComponent<RoomEnterTrigger>().deactivated = roomOverride[index - 1];
         if (index < 3) doors[index].gameObject.SetActive(true);
         doors[index - 1].UnlockDoor();
     }

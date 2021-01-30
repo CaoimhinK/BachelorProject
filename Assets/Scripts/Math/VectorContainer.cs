@@ -5,7 +5,7 @@ using UnityEngine;
 public class VectorContainer : MonoBehaviour
 {
     public Vector3 vec;
-    public Recepticle[] recs;
+    public Container[] recs;
 
     private Spawner _spawner;
 

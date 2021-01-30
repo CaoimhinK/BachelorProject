@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MatrixApplier : MonoBehaviour
 {
-    public Recepticle rec;
+    public Container rec;
     public GameObject go;
     public GameObject target;
     public bool chainMatrix;

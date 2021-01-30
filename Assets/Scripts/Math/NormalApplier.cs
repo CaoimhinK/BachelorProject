@@ -6,7 +6,7 @@ using UnityEngine;
 public class NormalApplier : MonoBehaviour
 {
     public NormalApplicant napp;
-    public Recepticle rec;
+    public Container rec;
     public bool isCorrect;
 
     private bool _animating;

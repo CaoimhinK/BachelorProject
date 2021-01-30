@@ -56,7 +56,7 @@ public class FuncIO
 
 static class TypeFunctions
 {
-    public static FuncIO EvaluateFunction(FuncType type, Recepticle vec1, Recepticle vec2)
+    public static FuncIO EvaluateFunction(FuncType type, Container vec1, Container vec2)
     {
         string strHead = "Math";
         string strBody = "";

@@ -6,6 +6,7 @@ public class InputHandler : MonoBehaviour
     public Inventory inventory;
     public float speed = 10f;
     public bool lockInput;
+    public bool roomOverride;
     public Transform cam;
     public MessageManager mm;
 
@@ -19,6 +20,7 @@ public class InputHandler : MonoBehaviour
     private GameObject _currentWall;
     private Material _currentMat;
     private bool _messageShowing;
+    private bool exiting;
     
     void Start()
     {
@@ -30,7 +32,22 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        if (lockInput) return;
+        if (Input.GetButtonDown("Quit"))
+        {
+            if (exiting)
+            {
+                mm.HideMessage();
+                lockInput = false;
+                exiting = false;
+            }
+            else
+            {
+                mm.Exit();
+                lockInput = true;
+                exiting = true;
+            }
+        }
+        else if (lockInput) return;
         HandleMove();
         CheckWalls();
         if (Input.GetButtonDown("Grab"))
@@ -48,7 +65,7 @@ public class InputHandler : MonoBehaviour
                         _currentGo = _anim.Spawn(spawner);
                     }
                 }
-                else if (HitGoTypeIs<Recepticle>(hitGo, out var rec))
+                else if (HitGoTypeIs<Container>(hitGo, out var rec))
                 {
                     if (_currentGo)
                     {
@@ -101,7 +118,7 @@ public class InputHandler : MonoBehaviour
                         delBut.PushButton();
                     }
                 }
-                else if (HitGoTypeIs<Noidel.Button>(hitGo, out var but))
+                else if (HitGoTypeIs<BachelorProject.Button>(hitGo, out var but))
                 {
                     but.PushButton();
                 }
@@ -124,6 +141,9 @@ public class InputHandler : MonoBehaviour
                 mm.ShowMessage(currentMessageName);
                 _messageShowing = true;
             }
+        }
+        else if (Input.GetButtonDown("Debug")) {
+            roomOverride = true;
         }
         else
         {
@@ -150,7 +170,7 @@ public class InputHandler : MonoBehaviour
                     _anim.Del(temp, hitGo);
                 }
             }
-            else if (HitGoTypeIs<Recepticle>(hitGo, out var rec))
+            else if (HitGoTypeIs<Container>(hitGo, out var rec))
             {
                 if (inventory.IndexFull(index) && !rec.HasObject())
                 {

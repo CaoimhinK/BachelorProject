@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Noidel {
+namespace BachelorProject {
     public class Button : MonoBehaviour
     {
         private bool _wasPushed;

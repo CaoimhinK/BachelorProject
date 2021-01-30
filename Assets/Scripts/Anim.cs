@@ -21,7 +21,7 @@ public class Anim : MonoBehaviour
         ));
     }
     
-    public GameObject TakeRec(Recepticle rec)
+    public GameObject TakeRec(Container rec)
     {
         var currentGo = rec.TakeObject();
         StartCoroutine(nameof(AnimFromTo), new Holder(
@@ -35,7 +35,7 @@ public class Anim : MonoBehaviour
         return currentGo;
     }
     
-    public void TakeRecToInventory(Recepticle rec, Inventory inv, int index)
+    public void TakeRecToInventory(Container rec, Inventory inv, int index)
     {
         var currentGo = rec.TakeObject();
         StartCoroutine(nameof(AnimFromTo), new Holder(
@@ -51,7 +51,7 @@ public class Anim : MonoBehaviour
     }
 
     private bool _isGiving;
-    public bool GiveRec(GameObject current, Transform hitGo, Recepticle rec)
+    public bool GiveRec(GameObject current, Transform hitGo, Container rec)
     {
         if (_isGiving)
         {

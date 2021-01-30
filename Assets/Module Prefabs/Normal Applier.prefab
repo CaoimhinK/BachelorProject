@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   napp: {fileID: 0}
   rec: {fileID: 7898417593257645006}
+  isCorrect: 0
 --- !u!1 &5485322906823009338
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +150,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5485322906823009337}
     m_Modifications:
+    - target: {fileID: 2414801224394012489, guid: 4c25517a9eb192cda9e8160ac192c05c, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3250824483425652279, guid: 4c25517a9eb192cda9e8160ac192c05c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -195,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547464346282185467, guid: 4c25517a9eb192cda9e8160ac192c05c, type: 3}
       propertyPath: m_Name
-      value: Recepticle
+      value: Container
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c25517a9eb192cda9e8160ac192c05c, type: 3}
@@ -212,6 +217,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97ecff8855d0f7c73a5ea003ae340496, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e621d77276460c458d2db765ad89247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

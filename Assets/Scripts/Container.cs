@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Recepticle : MonoBehaviour
+public class Container : MonoBehaviour
 {
     public ObjType type;
     public float defaultValue;

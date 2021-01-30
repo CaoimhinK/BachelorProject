@@ -1,13 +1,12 @@
 ﻿using System;
-using Noidel;
 using UnityEngine;
 
 public class Coplanarity : MonoBehaviour
 {
     public Transform[] points;
     public Spawner[] spawns;
-    public Recepticle answer;
-    public Button but;
+    public Container answer;
+    public BachelorProject.Button but;
 
     private float _distance;
     private bool _isCorrect;

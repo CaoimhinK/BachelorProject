@@ -10,8 +10,8 @@ public class Function : MonoBehaviour
     public Matrix4x4 mat;
     public FuncType type;
     
-    public Recepticle vec1;
-    public Recepticle vec2;
+    public Container vec1;
+    public Container vec2;
 
     private Vector3 _last;
     private float _lastValue;
