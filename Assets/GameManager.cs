@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private bool _halt;
     private bool ende;
 
+    private float startTime;
+
     void Start()
     {
         _chapter = Chapter.Tutorial;
@@ -67,6 +69,7 @@ public class GameManager : MonoBehaviour
                     mm.HideMessage();
                     mm.ShowMessage("Start");
                     _chapter = Chapter.Start;
+                    startTime = Time.time;
                 }
                 break;
             case Chapter.Start:
@@ -124,7 +127,8 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         ende = true;
-        mm.ShowMessage("Ending");
+        var duration = Time.time - startTime;
+        mm.ShowMessage("Ending", duration);
         input.lockInput = true;
     }
 }

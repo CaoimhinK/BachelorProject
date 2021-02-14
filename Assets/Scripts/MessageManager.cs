@@ -30,6 +30,21 @@ public class MessageManager : MonoBehaviour
         _currentMessage = message;
     }
 
+    public void ShowMessage(string messageName, float time)
+    {
+        if (_currentMessage) _currentMessage.gameObject.SetActive(false);
+        exit.gameObject.SetActive(false);
+        var message = _messages[messageName];
+        message.gameObject.SetActive(true);
+        gameObject.SetActive(true);
+
+        var timeString = FormatTimeString(time);
+
+        message.text = string.Format(message.text, timeString);
+
+        _currentMessage = message;
+    }
+
     public void HideMessage()
     {
         exit.gameObject.SetActive(false);
@@ -45,5 +60,18 @@ public class MessageManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    private string FormatTimeString(float time)
+    {
+      var span = System.TimeSpan.FromSeconds(time);
+      var mins = span.Minutes;
+      var minString = (mins > 0)
+        ? string.Format("{0:D2} minutes, ", span.Minutes)
+        : "";
+      var secString = string.Format("{0:D2} seconds",
+          span.Seconds);
+
+      return minString + secString;
     }
 }
