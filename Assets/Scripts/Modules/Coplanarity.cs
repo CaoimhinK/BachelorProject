@@ -10,12 +10,17 @@ public class Coplanarity : MonoBehaviour
 
     private float _distance;
     private bool _isCorrect;
+    private bool _correctShown;
 
     private void Update()
     {
         if (!_isCorrect && answer.HasObject() && but.WasPushed() && IsCorrect())
         {
             _isCorrect = true;
+        }
+        if (_isCorrect && !_correctShown) {
+          GetComponent<MeshRenderer>().material.color = new Color(0,1,0,0.3f);
+          _correctShown = true;
         }
     }
 

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public FieldGenerator fieldGenerator;
     public Coplanarity coplanarity;
     public Shapes shapes;
-    public MatrixApplier texture;
+    public TextureModule texture;
 
     private Chapter _chapter;
     private bool _halt;

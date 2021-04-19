@@ -489,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598491313887158259, guid: 1ecac7de25905c74ca34343276048a8a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6598491313887158259, guid: 1ecac7de25905c74ca34343276048a8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1771,7 +1771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8792769645974253045, guid: 5d6b13707b520d441b33cd5954e3fcfe, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8792769645974253045, guid: 5d6b13707b520d441b33cd5954e3fcfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2512,7 +2512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767320045774642724, guid: fb822f9301329ff96ae6a9caf638270a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 767320045774642724, guid: fb822f9301329ff96ae6a9caf638270a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2629,8 +2629,7 @@ MonoBehaviour:
   fieldGenerator: {fileID: 503750289}
   coplanarity: {fileID: 349150553}
   shapes: {fileID: 589010317}
-  texture: {fileID: 361248537}
-  roomOverride: 0
+  texture: {fileID: 1500917992}
 --- !u!4 &487647597
 Transform:
   m_ObjectHideFlags: 0
@@ -3317,6 +3316,10 @@ MonoBehaviour:
   - {fileID: 1524821563}
   - {fileID: 1002649740}
   - {fileID: 509669591}
+  solution:
+  - {fileID: 2126187198}
+  - {fileID: 889280355}
+  - {fileID: 1287699783}
 --- !u!4 &599193776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 767320045774642724, guid: fb822f9301329ff96ae6a9caf638270a, type: 3}
@@ -5189,7 +5192,7 @@ GameObject:
   - component: {fileID: 889280358}
   - component: {fileID: 889280357}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Triangle S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6010,6 +6013,9 @@ MonoBehaviour:
 
     I hope it was helpful!
 
+    Your
+    time was: {0}.
+
 
     kthxbye!'
 --- !u!222 &1003633739
@@ -6704,7 +6710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193808493}
   m_Layer: 0
-  m_Name: Game Stuff
+  m_Name: General Game Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7268,7 +7274,7 @@ GameObject:
   - component: {fileID: 1287699786}
   - component: {fileID: 1287699785}
   m_Layer: 0
-  m_Name: Cross
+  m_Name: Cross S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8292,7 +8298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631375326810814136, guid: 442717e5f4a3cb444932150ed6049524, type: 3}
       propertyPath: type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 442717e5f4a3cb444932150ed6049524, type: 3}
@@ -8516,6 +8522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1500917991}
+  - component: {fileID: 1500917992}
   m_Layer: 0
   m_Name: Texture
   m_TagString: Untagged
@@ -8536,9 +8543,24 @@ Transform:
   m_Children:
   - {fileID: 754151424}
   - {fileID: 2011148834}
+  - {fileID: 784151335}
   m_Father: {fileID: 1795751082}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1500917992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500917990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6d7592a64065d40a77cf801191a41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solution: {fileID: 512795918}
+  app: {fileID: 361248537}
 --- !u!4 &1514186941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 839801012219711801, guid: 442717e5f4a3cb444932150ed6049524, type: 3}
@@ -9885,7 +9907,6 @@ Transform:
   - {fileID: 1798523252}
   - {fileID: 2059008167}
   - {fileID: 1500917991}
-  - {fileID: 784151335}
   - {fileID: 96903754}
   - {fileID: 1281130633}
   - {fileID: 1611636151}
@@ -10264,7 +10285,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1795751082}
+    m_TransformParent: {fileID: 1500917991}
     m_Modifications:
     - target: {fileID: 7854318624437641147, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: m_Name
@@ -10300,7 +10321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854318624437641149, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7854318624437641149, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10316,11 +10337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854318624437641149, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4285712
+      value: 1.4285711
       objectReference: {fileID: 0}
     - target: {fileID: 7854318624437641149, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4285712
+      value: 1.4285711
       objectReference: {fileID: 0}
     - target: {fileID: 7854318625024890198, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: go
@@ -11044,7 +11065,7 @@ PrefabInstance:
     - target: {fileID: 7854318625024890198, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1613538180}
+      objectReference: {fileID: 1287699783}
     - target: {fileID: 7854318625024890198, guid: e23697c4ed352e97dbdf0a969181ad05, type: 3}
       propertyPath: correctMatrix.e02
       value: 0
@@ -11519,7 +11540,7 @@ GameObject:
   - component: {fileID: 2126187201}
   - component: {fileID: 2126187200}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Square S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

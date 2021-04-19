@@ -24,6 +24,7 @@ public class MatrixApplier : MonoBehaviour
     private Mesh _mesh;
 
     private bool _solved;
+    private bool _disabled;
 
     public void Start()
     {
@@ -45,26 +46,35 @@ public class MatrixApplier : MonoBehaviour
         if (_animating) Animate();
     }
 
+    public void Disable()
+    {
+        _disabled = true;
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        go.transform.position += Vector3.up * 0.1f;
-        target.transform.position += Vector3.up * 0.1f;
-        _mat.color = Color.red;
-        _targetMat.color = Color.cyan;
+        if (!_disabled) {
+            go.transform.position += Vector3.up * 0.1f;
+            target.transform.position += Vector3.up * 0.1f;
+            _mat.color = Color.red;
+            _targetMat.color = Color.cyan;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        go.transform.position += Vector3.down * 0.1f;
-        target.transform.position += Vector3.down * 0.1f;
-        _mat.color = Color.white;
-        _targetMat.color = _col;
+        if (!_disabled) {
+            go.transform.position += Vector3.down * 0.1f;
+            target.transform.position += Vector3.down * 0.1f;
+            _mat.color = Color.white;
+            _targetMat.color = _col;
+        }
     }
 
     public void ApplyMatrix()
     {
         if (_animating) return;
-        
+
         var mat = rec.GetMatrix();
         _startVertices = _mesh.vertices;
         _endVertices = new Vector3[_startVertices.Length];
@@ -102,7 +112,7 @@ public class MatrixApplier : MonoBehaviour
 
         _mesh.vertices = vertices;
     }
-    
+
     IEnumerator MoveGo()
     {
         _animating = true;
