@@ -1371,27 +1371,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -13.5
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3203463002037336663, guid: e4b9357250895a14298e47c8b4f7aef8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5774,7 +5774,9 @@ MonoBehaviour:
     J/K/L - alternatives for 1/2/3
 
     Tab - show
-    last text'
+    last text
+
+    X - (Presentation Mode) Unlock all doors'
 --- !u!222 &973410193
 CanvasRenderer:
   m_ObjectHideFlags: 0
